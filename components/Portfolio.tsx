@@ -4,13 +4,14 @@ import React, { useState } from 'react';
 interface PortfolioProps {
   limit?: number;
   onNavigate?: (page: string) => void;
+  onProjectSelect: (project: any) => void;
 }
 
-const ProjectCard = React.memo<{ project: any, logoUrl: string }>(({ project, logoUrl }) => {
+const ProjectCard = React.memo<{ project: any, logoUrl: string, onSelect: (p: any) => void }>(({ project, logoUrl, onSelect }) => {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <div className="group flex flex-col">
+    <div className="group flex flex-col" onClick={() => onSelect(project)}>
       <div className="relative overflow-hidden bg-zinc-200 aspect-[4/3] mb-10 shadow-xl shadow-zinc-200/40 rounded-2xl cursor-pointer">
         {/* Project Image - Blurred initially, clear on hover */}
         <img 
@@ -73,36 +74,42 @@ const ProjectCard = React.memo<{ project: any, logoUrl: string }>(({ project, lo
 
 ProjectCard.displayName = 'ProjectCard';
 
-const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate }) => {
+const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelect }) => {
   const projects = [
     { 
       title: "Hillstone Pendik", 
       cat: "İNŞAAT PROJESİ", 
       img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000",
       logoId: "1mpzqBGdkaSVV4dCzemn8REuPcQlF2ldm",
-      desc: "Modern mimari ve inşaat teknolojilerinin dijital vizyonu.",
+      desc: "Kurumsal web tasarımı (hillstonependik.com), Meta reklam yönetimi ve drone çekimleriyle projenin dijital görünürlüğünü %85 artırdık.",
+      stats: "2.5M+ GÖSTERİM",
+      url: "https://hillstonependik.com",
+      videoUrl: "https://www.youtube.com/embed/8uLlnrvHiCw?autoplay=1&mute=1&controls=0&loop=1&playlist=8uLlnrvHiCw&si=OdaSKWS5mp-fV26O&enablejsapi=1",
       zoomLogo: true
     },
     { 
       title: "On Müzik", 
-      cat: "MÜZİK PRODÜKSİYON", 
+      cat: "DJ EKİPMANLARI & SES SİSTEMLERİ", 
       img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=1000",
       logoId: "1QSf3qBwqTFb7yL6x6l5f5KVDRkX0pe5D",
-      desc: "Ses ve estetiğin dijital dünyadaki uyumu."
+      desc: "DJ ekipmanları ve profesyonel ses sistemleri satışında Meta reklam yönetimi ile satış hacmini %120 oranında artırdık.",
+      stats: "%120 SATIŞ ARTIŞI"
     },
     { 
       title: "Mjora Butik", 
       cat: "MODA & E-TİCARET", 
       img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1000",
       logoId: "1wDaiq6v8qkkR6deMQs2PvH5AOD_gz_eg",
-      desc: "Butik modanın minimal ve şık tasarımı."
+      desc: "Meta ve Google reklam yönetimi ile ROAS oranını 4.5 seviyesine çıkararak satış hacmini sürdürülebilir şekilde büyüttük.",
+      stats: "4.5 ROAS VERİMİ"
     },
     { 
       title: "Virafit", 
       cat: "SAĞLIK & FITNESS", 
       img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1000",
       logoId: "1AXuRtmnSbETxcPl2ADUPyAdle2SHvq3g",
-      desc: "Performans odaklı bir dijital deneyim."
+      desc: "Performans pazarlaması ve SEO çalışmaları ile üye kayıt maliyetlerini %40 düşürürken organik trafiği 3 katına çıkardık.",
+      stats: "3X ORGANİK TRAFİK"
     }
   ];
 
@@ -128,12 +135,13 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
           {displayProjects.map((p, idx) => (
-            <ProjectCard key={idx} project={p} logoUrl={`https://lh3.googleusercontent.com/d/${p.logoId}`} />
+            <ProjectCard key={idx} project={p} logoUrl={`https://lh3.googleusercontent.com/d/${p.logoId}`} onSelect={onProjectSelect} />
           ))}
         </div>
       </div>
     </section>
   );
 };
+
 
 export default Portfolio;

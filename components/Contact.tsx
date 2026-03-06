@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-black text-[11px] uppercase tracking-widest text-gray-400 mb-2">E-POSTA ADRESİMİZ</h4>
-                  <p className="text-black text-xl font-bold">merhaba@novadigital.com</p>
+                  <a href="mailto:info@nextgenmedya.com" className="text-black text-xl font-bold hover:text-zinc-600 transition-colors">info@nextgenmedya.com</a>
                 </div>
               </div>
               
@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-black text-[11px] uppercase tracking-widest text-gray-400 mb-2">TELEFON HATTIMIZ</h4>
-                  <p className="text-black text-xl font-bold">+90 212 555 0123</p>
+                  <a href="tel:05434123380" className="text-black text-xl font-bold hover:text-zinc-600 transition-colors">0543 412 33 80</a>
                 </div>
               </div>
             </div>

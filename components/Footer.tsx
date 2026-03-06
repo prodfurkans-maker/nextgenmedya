@@ -50,13 +50,13 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <p className="text-base text-zinc-600 leading-loose font-bold">
                 Levent Loft / İstanbul<br />
                 Merkezi İş Alanı<br />
-                +90 212 555 0123
+                <a href="tel:05434123380" className="hover:text-black transition-colors">0543 412 33 80</a>
               </p>
             </div>
             <div>
               <p className="text-[12px] uppercase tracking-[0.5em] font-black text-zinc-300 mb-10">DİJİTAL</p>
-              <a href="mailto:hello@nextgenmedya.com" className="text-lg font-[900] text-black border-b-4 border-black/10 pb-2 hover:border-black transition-all inline-block">
-                hello@nextgenmedya.com
+              <a href="mailto:info@nextgenmedya.com" className="text-lg font-[900] text-black border-b-4 border-black/10 pb-2 hover:border-black transition-all inline-block">
+                info@nextgenmedya.com
               </a>
             </div>
           </div>
