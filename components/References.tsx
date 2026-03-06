@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 
-const ReferenceLogo: React.FC<{ name: string, logoId: string, services: string[], zoom?: boolean }> = ({ name, logoId, services, zoom }) => {
+const ReferenceLogo = React.memo<{ name: string, logoId: string, services: string[], zoom?: boolean }>(({ name, logoId, services, zoom }) => {
   const [error, setError] = useState(false);
   const logoUrl = `https://lh3.googleusercontent.com/d/${logoId}`;
 
@@ -13,6 +13,7 @@ const ReferenceLogo: React.FC<{ name: string, logoId: string, services: string[]
             <img 
               src={logoUrl} 
               alt={name} 
+              loading="lazy"
               className={`${zoom ? 'max-w-[200px] max-h-[160px]' : 'max-w-[160px] max-h-[120px]'} object-contain`}
               onError={() => setError(true)}
             />
@@ -36,7 +37,9 @@ const ReferenceLogo: React.FC<{ name: string, logoId: string, services: string[]
       </div>
     </div>
   );
-};
+});
+
+ReferenceLogo.displayName = 'ReferenceLogo';
 
 const References: React.FC = () => {
   const brands = [
