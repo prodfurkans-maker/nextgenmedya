@@ -18,7 +18,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               {!logoError ? (
                 <img 
                   src={logoUrl} 
-                  alt="Nova Digital Footer Logo" 
+                  alt="NextGen Medya Footer Logo" 
                   className="h-28 md:h-32 w-auto object-contain transition-all duration-700 group-hover:scale-105 rounded-full mix-blend-multiply"
                   onError={() => setLogoError(true)}
                 />

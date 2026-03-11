@@ -61,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
               {!logoError ? (
                 <img 
                   src={logoUrl} 
-                  alt="Nova Digital Logo" 
+                  alt="NextGen Medya Logo" 
                   loading="lazy"
                   className={`transition-all duration-500 object-contain hover:rotate-3 rounded-full mix-blend-multiply ${
                     isScrolled ? 'h-16 md:h-20' : 'h-24 md:h-32'
