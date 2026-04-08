@@ -42,33 +42,33 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
       <nav
         className={`fixed top-3 sm:top-4 left-3 right-3 sm:left-6 sm:right-6 z-[60] transition-all duration-500 ${
           isScrolled || isMenuOpen
-            ? 'bg-[#0D1323]/90 backdrop-blur-xl border border-indigo-300/20 shadow-2xl rounded-2xl py-2.5'
-            : 'bg-[#0D1323]/70 backdrop-blur-lg border border-indigo-300/10 rounded-2xl py-3.5'
+            ? 'bg-[#0E1625]/88 backdrop-blur-xl border border-cyan-200/15 shadow-2xl rounded-2xl py-2.5'
+            : 'bg-[#0E1625]/68 backdrop-blur-lg border border-cyan-200/10 rounded-2xl py-3.5'
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-3 sm:px-5 md:px-7 flex items-center justify-between gap-3">
           <button onClick={() => handleNavigate('home')} className="flex items-center space-x-3 text-left group min-w-0">
             <div className="relative">
-              <div className="absolute inset-0 rounded-2xl blur-lg bg-indigo-400/40" />
+              <div className="absolute inset-0 rounded-2xl blur-xl bg-cyan-300/25" />
               {!logoError ? (
                 <img
                   src={logoUrl}
                   alt="NextGen Medya Logo"
                   loading="lazy"
-                  className={`relative rounded-2xl object-contain transition-all duration-500 border border-white/30 bg-white/90 p-1 ${
+                  className={`relative rounded-2xl object-contain transition-all duration-500 ${
                     isScrolled ? 'h-10 w-10 sm:h-11 sm:w-11' : 'h-11 w-11 sm:h-12 sm:w-12'
                   }`}
                   onError={() => setLogoError(true)}
                 />
               ) : (
-                <div className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-2xl bg-white/90 border border-white/30" />
+                <div className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-2xl border border-white/20" />
               )}
             </div>
             <div className="min-w-0">
               <p className="font-[900] tracking-tight text-sm sm:text-base md:text-lg text-white truncate">
-                NextGen <span className="text-indigo-200">Medya</span>
+                NextGen <span className="text-cyan-200">Medya</span>
               </p>
-              <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.28em] text-indigo-100/70 font-bold truncate">
+              <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.28em] text-zinc-300/70 font-bold truncate">
                 Premium Growth Studio
               </p>
             </div>
@@ -80,9 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
                 key={link.id}
                 onClick={() => handleNavigate(link.id)}
                 className={`relative px-4 py-2.5 rounded-xl text-[12px] uppercase tracking-[0.2em] font-black transition-all ${
-                  activePage === link.id
-                    ? 'text-[#0D1323] bg-white shadow-lg'
-                    : 'text-indigo-100/70 hover:text-white hover:bg-white/10'
+                  activePage === link.id ? 'text-[#0E1625] bg-white shadow-lg' : 'text-zinc-200/80 hover:text-white hover:bg-white/10'
                 }`}
               >
                 {link.name}
@@ -93,7 +91,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
           <div className="flex items-center gap-2">
             <button
               onClick={() => handleNavigate('contact')}
-              className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-[#F8D57E] to-[#E8B84A] text-[#111827] text-[11px] uppercase tracking-[0.2em] font-black px-4 md:px-6 py-3 rounded-xl hover:brightness-95 transition-all"
+              className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-[#E6ECF3] to-[#C3CEDD] text-[#111827] text-[11px] uppercase tracking-[0.2em] font-black px-4 md:px-6 py-3 rounded-xl transition-all"
             >
               Teklif Al
               <ArrowUpRight size={14} />
@@ -122,11 +120,11 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 24, stiffness: 230 }}
-              className="ml-auto h-full w-[88%] max-w-sm bg-[#0D1323] p-6 flex flex-col border-l border-indigo-300/20"
+              className="ml-auto h-full w-[88%] max-w-sm bg-[#0E1625] p-6 flex flex-col border-l border-cyan-200/20"
             >
               <div className="flex items-center justify-between mb-8">
-                <p className="font-black uppercase tracking-[0.24em] text-xs text-indigo-100/60">Menü</p>
-                <Sparkles size={16} className="text-indigo-100/60" />
+                <p className="font-black uppercase tracking-[0.24em] text-xs text-zinc-200/60">Menü</p>
+                <Sparkles size={16} className="text-zinc-200/60" />
               </div>
 
               <div className="space-y-3">
@@ -138,7 +136,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
                     transition={{ delay: 0.05 + idx * 0.06 }}
                     onClick={() => handleNavigate(link.id)}
                     className={`w-full text-left px-4 py-4 rounded-2xl font-extrabold tracking-tight text-2xl transition-all ${
-                      activePage === link.id ? 'bg-white text-[#0D1323]' : 'bg-white/5 text-white'
+                      activePage === link.id ? 'bg-white text-[#0E1625]' : 'bg-white/5 text-white'
                     }`}
                   >
                     {link.name}
@@ -146,11 +144,11 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
                 ))}
               </div>
 
-              <div className="mt-auto pt-8 border-t border-indigo-200/20 space-y-3">
+              <div className="mt-auto pt-8 border-t border-cyan-200/20 space-y-3">
                 <a href="mailto:info@nextgenmedya.com" className="block text-white font-bold text-sm">
                   info@nextgenmedya.com
                 </a>
-                <a href="tel:05364290919" className="block text-indigo-100/70 font-semibold text-sm">
+                <a href="tel:05364290919" className="block text-zinc-300/80 font-semibold text-sm">
                   0536 429 09 19
                 </a>
               </div>

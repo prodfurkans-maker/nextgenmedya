@@ -10,29 +10,30 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const logoUrl = 'https://lh3.googleusercontent.com/d/18wpfqJGwsE1h_t3vUpcNfeSjxQVtC4ls';
 
   return (
-    <footer className="bg-gradient-to-b from-[#1A1F2B] via-[#252B3A] to-[#313A4B] text-white pt-20 sm:pt-24 pb-10 border-t border-zinc-300/30 relative overflow-hidden">
-      <div className="absolute -top-24 right-0 w-72 h-72 bg-zinc-200/10 blur-3xl rounded-full" />
+    <footer className="bg-gradient-to-b from-[#0F172A] via-[#162235] to-[#1E293B] text-white pt-20 sm:pt-24 pb-10 border-t border-cyan-200/20 relative overflow-hidden">
+      <div className="absolute -top-24 right-0 w-72 h-72 bg-cyan-200/10 blur-3xl rounded-full" />
+      <div className="absolute -bottom-24 left-0 w-72 h-72 bg-slate-200/10 blur-3xl rounded-full" />
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 mb-14">
           <div className="lg:col-span-5">
             <button onClick={() => onNavigate('home')} className="mb-8 flex items-center group text-left space-x-4">
               <div className="relative">
-                <div className="absolute inset-0 rounded-2xl bg-zinc-200/35 blur-xl" />
+                <div className="absolute inset-0 rounded-2xl bg-cyan-200/30 blur-xl" />
                 {!logoError ? (
                   <img
                     src={logoUrl}
                     alt="NextGen Medya Footer Logo"
-                    className="relative h-16 w-16 sm:h-20 sm:w-20 object-contain rounded-2xl border border-zinc-200/60 bg-white/95 p-1"
+                    className="relative h-16 w-16 sm:h-20 sm:w-20 object-contain rounded-2xl"
                     onError={() => setLogoError(true)}
                   />
                 ) : (
-                  <div className="relative h-16 w-16 sm:h-20 sm:w-20 rounded-2xl border border-zinc-200/60 bg-white/95" />
+                  <div className="relative h-16 w-16 sm:h-20 sm:w-20 rounded-2xl border border-white/20" />
                 )}
               </div>
               <div>
-                <span className="text-3xl sm:text-4xl font-[900] tracking-tighter text-white block">NextGen <span className="text-zinc-300">Medya</span></span>
-                <span className="text-[11px] font-black tracking-[0.35em] text-zinc-300/70 uppercase">Silver Edition Agency</span>
+                <span className="text-3xl sm:text-4xl font-[900] tracking-tighter text-white block">NextGen <span className="text-cyan-200">Medya</span></span>
+                <span className="text-[11px] font-black tracking-[0.35em] text-zinc-300/70 uppercase">Signature Growth Agency</span>
               </div>
             </button>
 
@@ -42,7 +43,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
             <button
               onClick={() => onNavigate('contact')}
-              className="mt-8 inline-flex items-center gap-2 bg-gradient-to-r from-[#E5E7EB] to-[#BFC6D1] text-[#111827] px-5 py-3 rounded-xl text-xs uppercase tracking-[0.22em] font-black"
+              className="mt-8 inline-flex items-center gap-2 bg-gradient-to-r from-[#E6ECF3] to-[#C3CEDD] text-[#111827] px-5 py-3 rounded-xl text-xs uppercase tracking-[0.22em] font-black"
             >
               Ücretsiz Keşif Görüşmesi
               <ArrowUpRight size={14} />
