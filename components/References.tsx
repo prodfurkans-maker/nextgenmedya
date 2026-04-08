@@ -10,13 +10,13 @@ const ReferenceLogo = React.memo<{ name: string; logoId: string; services: strin
       <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-cyan-300/20 blur-2xl" />
       <div className="absolute -bottom-12 -left-8 w-24 h-24 rounded-full bg-violet-300/20 blur-2xl" />
 
-      <div className="h-28 flex items-center justify-center">
+      <div className="h-32 flex items-center justify-center">
         {!error ? (
           <img
             src={logoUrl}
             alt={name}
             loading="lazy"
-            className={`object-contain transition-transform duration-500 group-hover:scale-105 ${zoom ? 'max-w-[210px] max-h-[140px]' : 'max-w-[170px] max-h-[120px]'}`}
+            className={`object-contain transition-transform duration-500 group-hover:scale-105 ${zoom ? 'max-w-[240px] max-h-[160px]' : 'max-w-[210px] max-h-[140px]'}`}
             onError={() => setError(true)}
           />
         ) : (
@@ -42,10 +42,10 @@ ReferenceLogo.displayName = 'ReferenceLogo';
 
 const References: React.FC = () => {
   const brands = [
-    { name: 'HILLSTONE PENDIK', id: '1mpzqBGdkaSVV4dCzemn8REuPcQlF2ldm', services: ['Drone Çekimi', 'Sosyal Medya', 'Web Yönetimi'], zoom: true },
-    { name: 'ON MÜZİK', id: '1QSf3qBwqTFb7yL6x6l5f5KVDRkX0pe5D', services: ['Prodüksiyon', 'Dijital Dağıtım', 'Marka Kimliği'] },
-    { name: 'MJORA BUTIK', id: '1wDaiq6v8qkkR6deMQs2PvH5AOD_gz_eg', services: ['E-Ticaret', 'Ürün Çekimi', 'Reklam Yönetimi'] },
-    { name: 'VIRAFIT', id: '1AXuRtmnSbETxcPl2ADUPyAdle2SHvq3g', services: ['İçerik Üretimi', 'SEO', 'Mobil Uygulama'] }
+    { name: 'HILLSTONE PENDIK', id: '1mpzqBGdkaSVV4dCzemn8REuPcQlF2ldm', services: ['Drone Çekimi', 'Sosyal Medya', 'Web Yönetimi', 'Lead Generation'], zoom: true },
+    { name: 'ON MÜZİK', id: '1QSf3qBwqTFb7yL6x6l5f5KVDRkX0pe5D', services: ['Prodüksiyon', 'Dijital Dağıtım', 'Marka Kimliği', 'Google Ads'] },
+    { name: 'MJORA BUTIK', id: '1wDaiq6v8qkkR6deMQs2PvH5AOD_gz_eg', services: ['E-Ticaret', 'Ürün Çekimi', 'Reklam Yönetimi', 'Dönüşüm Artışı'] },
+    { name: 'VIRAFIT', id: '1AXuRtmnSbETxcPl2ADUPyAdle2SHvq3g', services: ['İçerik Üretimi', 'SEO', 'Mobil Uygulama', 'Performans Pazarlama'] }
   ];
 
   return (

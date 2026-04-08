@@ -15,7 +15,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
       img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
       logoId: '1mpzqBGdkaSVV4dCzemn8REuPcQlF2ldm',
       desc: 'Kurumsal web, reklam yönetimi ve drone prodüksiyonla dijital görünürlüğü %85 artırdık.',
-      stats: '2.5M+ Gösterim'
+      stats: '2.5M+ Gösterim',
+      focus: 'Web + Reklam + Prodüksiyon'
     },
     {
       title: 'On Müzik',
@@ -23,7 +24,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
       img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=1200',
       logoId: '1QSf3qBwqTFb7yL6x6l5f5KVDRkX0pe5D',
       desc: 'Performans odaklı kampanyalar ile satış hacminde %120 artış elde edildi.',
-      stats: '%120 Satış Artışı'
+      stats: '%120 Satış Artışı',
+      focus: 'E-ticaret Performans Marketing'
     },
     {
       title: 'Mjora Butik',
@@ -31,7 +33,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
       img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200',
       logoId: '1wDaiq6v8qkkR6deMQs2PvH5AOD_gz_eg',
       desc: 'Meta + Google reklam optimizasyonu ile ROAS oranını 4.5 seviyesine taşıdık.',
-      stats: '4.5 ROAS'
+      stats: '4.5 ROAS',
+      focus: 'ROAS ve Dönüşüm Optimizasyonu'
     },
     {
       title: 'Virafit',
@@ -39,7 +42,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
       img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200',
       logoId: '1AXuRtmnSbETxcPl2ADUPyAdle2SHvq3g',
       desc: 'SEO ve performans pazarlama ile üye edinim maliyeti düşerken organik trafik 3 kat büyüdü.',
-      stats: '3x Organik Trafik'
+      stats: '3x Organik Trafik',
+      focus: 'SEO + Lead Generation'
     }
   ];
 
@@ -86,13 +90,16 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <span className="absolute top-4 left-4 text-[10px] font-black tracking-wider uppercase bg-white/90 text-zinc-900 rounded-full px-3 py-1.5">{project.cat}</span>
                 <span className="absolute bottom-4 left-4 text-white text-xs font-extrabold tracking-wide">{project.stats}</span>
-                <div className="absolute bottom-4 right-4 w-12 h-12 rounded-xl bg-white/90 border border-white p-2">
+                <div className="absolute bottom-4 right-4 w-16 h-16 rounded-2xl bg-white/95 border border-white shadow-xl p-2.5">
                   <img src={`https://lh3.googleusercontent.com/d/${project.logoId}`} alt={project.title} className="w-full h-full object-contain" />
                 </div>
               </div>
               <div className="p-5">
                 <h3 className="text-2xl font-[900] tracking-tight text-white">{project.title}</h3>
                 <p className="mt-2 text-zinc-400 text-sm leading-relaxed">{project.desc} Projelerde sürdürülebilir müşteri kazanımı için sürekli optimizasyon modeli kullandık.</p>
+                <span className="inline-flex mt-3 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.22em] font-black text-zinc-200">
+                  {project.focus}
+                </span>
               </div>
             </button>
           ))}

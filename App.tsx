@@ -9,6 +9,7 @@ import References from './components/References';
 import Process from './components/Process';
 import SeoFaq from './components/SeoFaq';
 import HomeInsights from './components/HomeInsights';
+import HomeLinks from './components/HomeLinks';
 import CTA from './components/CTA';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -169,6 +170,7 @@ const App: React.FC = () => {
             <Hero onNavigate={setActivePage} onProjectSelect={handleProjectSelect} />
             <References />
             <Services limit={3} onNavigate={() => setActivePage('services')} />
+            <HomeLinks onNavigate={setActivePage} />
             <Process />
             <HomeInsights />
             <Portfolio limit={4} onNavigate={() => setActivePage('portfolio')} onProjectSelect={handleProjectSelect} />
