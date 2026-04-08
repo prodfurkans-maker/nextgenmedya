@@ -56,10 +56,11 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               <div className="relative h-full rounded-2xl overflow-hidden border border-white/15 bg-black">
                 <iframe
                   className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/8uLlnrvHiCw?autoplay=0&mute=0&controls=1&rel=0&modestbranding=1&playsinline=1"
+                  src="https://www.youtube.com/embed/8uLlnrvHiCw?autoplay=1&mute=1&controls=1&loop=1&playlist=8uLlnrvHiCw&rel=0&modestbranding=1&playsinline=1"
                   title="NextGen Medya Hero Video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
                 ></iframe>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/0 pointer-events-none" />

@@ -54,7 +54,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
                   src={logoUrl}
                   alt="NextGen Medya Logo"
                   loading="lazy"
-                  className={`relative object-contain transition-all duration-500 ${
+                  className={`relative object-contain rounded-2xl transition-all duration-500 ${
                     isScrolled ? 'h-10 w-10 sm:h-11 sm:w-11' : 'h-11 w-11 sm:h-12 sm:w-12'
                   }`}
                   onError={() => setLogoError(true)}
