@@ -42,8 +42,8 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
       <nav
         className={`fixed top-3 sm:top-4 left-3 right-3 sm:left-6 sm:right-6 z-[60] transition-all duration-500 ${
           isScrolled || isMenuOpen
-            ? 'bg-[#0E1625]/88 backdrop-blur-xl border border-cyan-200/15 shadow-2xl rounded-2xl py-2.5'
-            : 'bg-[#0E1625]/68 backdrop-blur-lg border border-cyan-200/10 rounded-2xl py-3.5'
+            ? 'bg-gradient-to-r from-[#0B1220] via-[#111A2B] to-[#0C1425] border border-cyan-200/20 shadow-[0_20px_50px_rgba(3,8,20,0.55)] rounded-2xl py-2.5'
+            : 'bg-gradient-to-r from-[#0B1220] via-[#111A2B] to-[#0C1425] border border-cyan-200/15 shadow-[0_14px_35px_rgba(3,8,20,0.45)] rounded-2xl py-3.5'
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-3 sm:px-5 md:px-7 flex items-center justify-between gap-3">
@@ -98,7 +98,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="xl:hidden inline-flex items-center justify-center rounded-xl p-2.5 bg-white/10 text-white hover:bg-white/20 transition-colors"
+              className="xl:hidden inline-flex items-center justify-center rounded-xl p-2.5 bg-white/12 text-white hover:bg-white/22 transition-colors"
               aria-label="Menü"
             >
               {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -120,7 +120,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 24, stiffness: 230 }}
-              className="ml-auto h-full w-[88%] max-w-sm bg-[#0E1625] p-6 flex flex-col border-l border-cyan-200/20"
+              className="ml-auto h-full w-[88%] max-w-sm bg-gradient-to-b from-[#0B1220] to-[#0C1425] p-6 flex flex-col border-l border-cyan-200/20"
             >
               <div className="flex items-center justify-between mb-8">
                 <p className="font-black uppercase tracking-[0.24em] text-xs text-zinc-200/60">Menü</p>
