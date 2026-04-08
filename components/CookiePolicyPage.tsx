@@ -2,20 +2,21 @@ import React from 'react';
 
 const CookiePolicyPage: React.FC = () => {
   return (
-    <section className="py-20 sm:py-24 bg-gradient-to-b from-[#F8FAFC] to-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-10">
+    <section className="py-16 sm:py-20 bg-[#060A12] text-white">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-10">
         <span className="text-[10px] uppercase tracking-[0.35em] font-black text-zinc-400">Yasal</span>
-        <h1 className="text-3xl sm:text-5xl font-[900] text-[#0F172A] mt-3 mb-6">Çerez Politikası</h1>
-        <div className="space-y-5 text-zinc-600 leading-relaxed text-sm sm:text-base">
-          <p>
-            Bu site, kullanıcı deneyimini geliştirmek, performansı ölçmek ve pazarlama süreçlerini optimize etmek amacıyla çerezler kullanır.
-          </p>
-          <p>
-            Zorunlu çerezler sitenin çalışması için gereklidir. Analitik ve pazarlama çerezleri ise yalnızca onay vermeniz halinde aktif olur.
-          </p>
-          <p>
-            Çerez tercihlerinizi tarayıcı ayarlarınızdan veya sitedeki çerez bildirimi üzerinden dilediğiniz zaman güncelleyebilirsiniz.
-          </p>
+        <h1 className="text-3xl sm:text-5xl font-[900] mt-3 mb-8">Çerez Politikası</h1>
+
+        <div className="space-y-4 text-zinc-300 leading-relaxed text-sm sm:text-base">
+          <p>Bu site, kullanıcı deneyimini geliştirmek ve performansı ölçmek amacıyla çerezler kullanır.</p>
+          <div className="rounded-2xl border border-white/15 bg-white/[0.03] p-5">
+            <h2 className="font-extrabold text-white mb-2">Çerez Türleri</h2>
+            <p>Zorunlu çerezler sitenin çalışması için gereklidir. Analitik ve pazarlama çerezleri onayınıza bağlıdır.</p>
+          </div>
+          <div className="rounded-2xl border border-white/15 bg-white/[0.03] p-5">
+            <h2 className="font-extrabold text-white mb-2">Tercih Yönetimi</h2>
+            <p>Çerez tercihlerinizi tarayıcı ayarlarınızdan veya sitedeki çerez bildirimi üzerinden güncelleyebilirsiniz.</p>
+          </div>
         </div>
       </div>
     </section>

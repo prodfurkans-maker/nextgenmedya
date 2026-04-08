@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Megaphone, Palette, ArrowUpRight } from 'lucide-react';
+import { Search, Megaphone, Palette, ArrowUpRight, Video, Globe, BarChart3 } from 'lucide-react';
 
 interface ServicesProps {
   limit?: number;
@@ -10,7 +10,10 @@ const Services: React.FC<ServicesProps> = ({ limit, onNavigate }) => {
   const allServices = [
     { title: 'Dijital Deneyim Tasarımı', icon: <Palette />, desc: 'Kullanıcı odaklı, modern ve yüksek performanslı web arayüzleri geliştiriyoruz.' },
     { title: 'Stratejik Pazarlama', icon: <Megaphone />, desc: 'Markanızın sesini doğru kitleye, en etkili kanallar üzerinden ulaştırıyoruz.' },
-    { title: 'SEO & Teknik Büyüme', icon: <Search />, desc: 'Organik görünürlük için teknik SEO, içerik stratejisi ve dönüşüm optimizasyonu sunuyoruz.' }
+    { title: 'SEO & Teknik Büyüme', icon: <Search />, desc: 'Organik görünürlük için teknik SEO, içerik stratejisi ve dönüşüm optimizasyonu sunuyoruz.' },
+    { title: 'Video Prodüksiyon', icon: <Video />, desc: 'Marka hikayenizi platforma uygun dikey/yatay video setleriyle ölçeklenebilir hale getiriyoruz.' },
+    { title: 'Web Site Yapımı', icon: <Globe />, desc: 'Hızlı, SEO uyumlu ve dönüşüm odaklı kurumsal/e-ticaret web siteleri geliştiriyoruz.' },
+    { title: 'Performans Raporlama', icon: <BarChart3 />, desc: 'Kanal bazlı KPI panelleri ve haftalık test-öğren döngüsü ile net görünürlük sağlıyoruz.' }
   ];
 
   const services = limit ? allServices.slice(0, limit) : allServices;
@@ -18,6 +21,14 @@ const Services: React.FC<ServicesProps> = ({ limit, onNavigate }) => {
   return (
     <section className="py-16 sm:py-20 bg-[#070B14]">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
+        {!limit && (
+          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:p-8 mb-8 sm:mb-10">
+            <span className="text-[10px] uppercase tracking-[0.35em] font-black text-zinc-400">HİZMETLER</span>
+            <h1 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-[900] text-white tracking-tight">Büyüme için Uçtan Uca Servis Ekosistemi</h1>
+            <p className="mt-4 text-zinc-300 max-w-3xl">Strateji, kreatif üretim, medya satın alma ve teknik altyapı katmanlarını tek ekipte birleştirerek sürdürülebilir büyüme sağlıyoruz.</p>
+          </div>
+        )}
+
         <div className="flex flex-col md:flex-row justify-between md:items-end mb-8 sm:mb-12 gap-4">
           <div className="max-w-3xl">
             <h2 className="text-4xl md:text-6xl font-[900] tracking-tight text-white">
@@ -35,7 +46,7 @@ const Services: React.FC<ServicesProps> = ({ limit, onNavigate }) => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
           {services.map((item, idx) => (
-            <article key={idx} className="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 shadow-sm hover:bg-white/[0.06] transition-all">
+            <article key={idx} className="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 shadow-sm hover:bg-white/[0.06] hover:-translate-y-1 transition-all">
               <div className="w-11 h-11 rounded-xl bg-[#A78BFA]/20 text-[#C4B5FD] flex items-center justify-center mb-4">
                 {item.icon}
               </div>

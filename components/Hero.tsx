@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, PlayCircle } from 'lucide-react';
+import { PlayCircle } from 'lucide-react';
 
 interface HeroProps {
   onNavigate: (page: string) => void;
@@ -13,14 +13,14 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         <img
           src="https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&q=80&w=1800"
           alt="Abstract 3D background"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-25"
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(124,58,237,.25),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,.2),transparent_40%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#070B14]/70 via-[#070B14]/80 to-[#070B14]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(124,58,237,.3),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,.25),transparent_40%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#070B14]/70 via-[#070B14]/85 to-[#070B14]" />
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="text-center lg:text-left flex flex-col justify-center">
             <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 backdrop-blur px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.28em] uppercase text-zinc-200">
               Creative Digital Agency
@@ -54,9 +54,10 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          <div className="">
-            <div className="h-full min-h-[420px] lg:min-h-[520px] rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl p-3 shadow-2xl">
-              <div className="relative h-full rounded-xl overflow-hidden">
+          <div className="relative">
+            <div className="absolute -inset-6 bg-gradient-to-r from-violet-400/25 to-cyan-300/20 blur-3xl" />
+            <div className="relative h-full min-h-[430px] lg:min-h-[560px] rounded-[28px] border border-white/20 bg-gradient-to-br from-white/10 to-white/[0.03] backdrop-blur-xl p-3 sm:p-4 shadow-[0_30px_90px_rgba(0,0,0,.45)]">
+              <div className="relative h-full rounded-2xl overflow-hidden border border-white/15">
                 <iframe
                   className="absolute inset-0 w-full h-full"
                   src="https://www.youtube.com/embed/8uLlnrvHiCw?autoplay=1&mute=1&controls=0&loop=1&playlist=8uLlnrvHiCw&modestbranding=1&playsinline=1"
@@ -64,10 +65,21 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                 ></iframe>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs sm:text-sm font-bold tracking-wide">
-                  <span>SHOWREEL / NEXTGEN MEDYA</span>
-                  <PlayCircle size={18} />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/10" />
+
+                <span className="absolute top-4 left-4 rounded-full border border-white/35 bg-black/40 px-3 py-1 text-[10px] font-black tracking-[0.25em] uppercase text-zinc-100 backdrop-blur">
+                  NextGen Showreel
+                </span>
+
+                <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/20 bg-black/35 backdrop-blur-md px-4 py-3 flex items-center justify-between">
+                  <div>
+                    <p className="text-white text-[11px] sm:text-xs font-black tracking-[0.2em] uppercase">Video Prodüksiyon</p>
+                    <p className="text-zinc-200 text-xs sm:text-sm font-semibold">Marka hikayenizi premium görsel dille anlatıyoruz</p>
+                  </div>
+                  <div className="w-11 h-11 rounded-xl bg-white/15 border border-white/30 flex items-center justify-center text-white">
+                    <PlayCircle size={20} />
+                  </div>
                 </div>
               </div>
             </div>

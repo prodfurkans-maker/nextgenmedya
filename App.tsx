@@ -203,7 +203,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#F8FAFC] to-white">
+    <div className="min-h-screen flex flex-col bg-[#060A12]">
       <Navbar
         activePage={activePage}
         onNavigate={(page) => {

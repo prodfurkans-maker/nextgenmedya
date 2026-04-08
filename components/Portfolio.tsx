@@ -48,6 +48,14 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
   return (
     <section className="py-16 sm:py-20 bg-[#060A12]">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
+        {!limit && (
+          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:p-8 mb-8 sm:mb-10">
+            <span className="text-[10px] uppercase tracking-[0.35em] font-black text-zinc-400">PORTFÖY</span>
+            <h1 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-[900] text-white tracking-tight">Ölçülebilir Başarı Hikayeleri</h1>
+            <p className="mt-4 text-zinc-300 max-w-3xl">Farklı sektörlerde kurduğumuz büyüme kurgularının kanal bazlı etkilerini gerçek projeler üzerinden inceleyin.</p>
+          </div>
+        )}
+
         <div className="flex flex-col md:flex-row justify-between md:items-end mb-8 sm:mb-12 gap-4">
           <div className="max-w-3xl">
             <h2 className="text-4xl md:text-6xl font-[900] tracking-tight text-white">Seçkin <span className="text-[#7DD3FC]">Projeler</span></h2>
