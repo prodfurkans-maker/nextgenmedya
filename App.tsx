@@ -13,6 +13,9 @@ import CTA from './components/CTA';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import TermsPage from './components/TermsPage';
+import PrivacyPage from './components/PrivacyPage';
+import KvkkPage from './components/KvkkPage';
 
 const BASE_URL = 'https://nextgenmedya.com';
 
@@ -59,6 +62,25 @@ const SEO_BY_PAGE: Record<string, SeoMeta> = {
       'SEO ve GEO odaklı dijital büyüme planınızı konuşmak için NextGen Medya ekibiyle iletişime geçin.',
     keywords: 'iletişim, teklif al, dijital ajans iletişim, seo danışmanlığı',
     canonicalPath: '/iletisim'
+  },
+
+  kvkk: {
+    title: 'KVKK | NextGen Medya',
+    description: 'NextGen Medya KVKK aydınlatma metni ve kişisel veri işleme süreçleri hakkında bilgi alın.',
+    keywords: 'kvkk, kişisel veriler, aydınlatma metni',
+    canonicalPath: '/kvkk'
+  },
+  privacy: {
+    title: 'Gizlilik Politikası | NextGen Medya',
+    description: 'NextGen Medya gizlilik politikası ve veri güvenliği yaklaşımı.',
+    keywords: 'gizlilik politikası, veri güvenliği, çerez politikası',
+    canonicalPath: '/gizlilik'
+  },
+  terms: {
+    title: 'Kullanım Koşulları | NextGen Medya',
+    description: 'NextGen Medya web sitesi kullanım koşulları.',
+    keywords: 'kullanım koşulları, yasal',
+    canonicalPath: '/kullanim-kosullari'
   },
   'project-detail': {
     title: 'Proje Detayı | NextGen Medya',
@@ -158,6 +180,12 @@ const App: React.FC = () => {
         return <Portfolio onNavigate={() => {}} onProjectSelect={handleProjectSelect} />;
       case 'contact':
         return <Contact />;
+      case 'kvkk':
+        return <KvkkPage />;
+      case 'privacy':
+        return <PrivacyPage />;
+      case 'terms':
+        return <TermsPage />;
       default:
         return <Hero onNavigate={setActivePage} onProjectSelect={handleProjectSelect} />;
     }

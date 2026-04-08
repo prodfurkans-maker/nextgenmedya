@@ -94,9 +94,9 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="pt-7 border-t border-indigo-100/15 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[10px] sm:text-[11px] font-[900] text-indigo-100/55 tracking-[0.25em] uppercase">© 2026 NextGen Medya</p>
           <div className="flex flex-wrap justify-center gap-6 text-[10px] sm:text-[11px] font-[900] text-indigo-100/60 tracking-widest uppercase">
-            <a href="#" className="hover:text-white transition-colors">KVKK</a>
-            <a href="#" className="hover:text-white transition-colors">Gizlilik</a>
-            <a href="#" className="hover:text-white transition-colors">Kullanım Koşulları</a>
+            <button onClick={() => onNavigate('kvkk')} className="hover:text-white transition-colors">KVKK</button>
+            <button onClick={() => onNavigate('privacy')} className="hover:text-white transition-colors">Gizlilik</button>
+            <button onClick={() => onNavigate('terms')} className="hover:text-white transition-colors">Kullanım Koşulları</button>
           </div>
         </div>
       </div>
