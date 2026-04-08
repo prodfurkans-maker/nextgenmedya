@@ -52,24 +52,24 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
 
           <div className="relative">
             <div className="absolute -inset-6 bg-gradient-to-r from-violet-400/25 to-cyan-300/20 blur-3xl" />
-            <div className="relative h-full min-h-[430px] lg:min-h-[560px] rounded-[28px] border border-white/20 bg-gradient-to-br from-white/10 to-white/[0.03] backdrop-blur-xl p-3 sm:p-4 shadow-[0_30px_90px_rgba(0,0,0,.45)]">
-              <div className="relative h-full rounded-2xl overflow-hidden border border-white/15 bg-black">
+            <div className="relative rounded-[28px] border border-white/20 bg-gradient-to-br from-white/10 to-white/[0.03] backdrop-blur-xl p-3 sm:p-4 shadow-[0_30px_90px_rgba(0,0,0,.45)]">
+              <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/15 bg-black">
                 <iframe
                   className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/8uLlnrvHiCw?autoplay=1&mute=1&controls=1&loop=1&playlist=8uLlnrvHiCw&rel=0&modestbranding=1&playsinline=1"
+                  src="https://www.youtube.com/embed/8uLlnrvHiCw?autoplay=1&mute=1&controls=0&loop=1&playlist=8uLlnrvHiCw&modestbranding=1&playsinline=1"
                   title="NextGen Medya Hero Video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 ></iframe>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/0 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-black/0 pointer-events-none" />
 
                 <span className="absolute top-4 left-4 rounded-full border border-white/35 bg-black/35 px-3 py-1 text-[10px] font-black tracking-[0.25em] uppercase text-zinc-100 backdrop-blur pointer-events-none">
                   NextGen Showreel
                 </span>
 
-                <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/20 bg-black/35 backdrop-blur-md px-4 py-3 flex items-center justify-between pointer-events-none">
+                <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-white/20 bg-black/35 backdrop-blur-md px-3 py-2.5 flex items-center justify-between pointer-events-none">
                   <div>
                     <p className="text-white text-[11px] sm:text-xs font-black tracking-[0.2em] uppercase">Video Prodüksiyon</p>
                     <p className="text-zinc-200 text-xs sm:text-sm font-semibold">Marka hikayenizi premium görsel dille anlatıyoruz</p>
@@ -79,7 +79,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
                   </div>
                 </div>
 
-                <div className="absolute left-4 right-4 bottom-20 h-1.5 rounded-full bg-white/20 overflow-hidden pointer-events-none">
+                <div className="absolute left-3 right-3 bottom-16 h-1.5 rounded-full bg-white/20 overflow-hidden pointer-events-none">
                   <div className="h-full w-1/3 bg-gradient-to-r from-[#C4B5FD] to-[#7DD3FC]" />
                 </div>
               </div>
