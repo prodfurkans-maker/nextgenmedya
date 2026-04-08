@@ -10,36 +10,36 @@ interface PortfolioProps {
 const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelect }) => {
   const projects = [
     {
-      title: 'Nocturnal Identity',
-      cat: 'BRAND EXPERIENCE',
-      img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200',
+      title: 'Hillstone Pendik',
+      cat: 'İNŞAAT PROJESİ',
+      img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
       logoId: '1mpzqBGdkaSVV4dCzemn8REuPcQlF2ldm',
-      desc: 'Premium marka dili ve landing mimarisi ile yüksek etkileşimli deneyim tasarımı.',
-      stats: '4.2x Engagement'
+      desc: 'Kurumsal web, reklam yönetimi ve drone prodüksiyonla dijital görünürlüğü %85 artırdık.',
+      stats: '2.5M+ Gösterim'
     },
     {
-      title: 'Quantum Commerce',
-      cat: 'PERFORMANCE DESIGN',
-      img: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&q=80&w=1200',
+      title: 'On Müzik',
+      cat: 'DJ EKİPMANLARI & SES',
+      img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=1200',
       logoId: '1QSf3qBwqTFb7yL6x6l5f5KVDRkX0pe5D',
-      desc: 'Dönüşüm odaklı kreatifler ve funnel optimizasyonu ile satış artışı.',
-      stats: '+120% Sales'
+      desc: 'Performans odaklı kampanyalar ile satış hacminde %120 artış elde edildi.',
+      stats: '%120 Satış Artışı'
     },
     {
-      title: 'Aura Motion',
-      cat: 'VISUAL DIRECTION',
-      img: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&q=80&w=1200',
+      title: 'Mjora Butik',
+      cat: 'MODA & E-TİCARET',
+      img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200',
       logoId: '1wDaiq6v8qkkR6deMQs2PvH5AOD_gz_eg',
-      desc: 'Hikâye odaklı video & kampanya tasarımıyla premium marka algısı.',
-      stats: '5.1M Reach'
+      desc: 'Meta + Google reklam optimizasyonu ile ROAS oranını 4.5 seviyesine taşıdık.',
+      stats: '4.5 ROAS'
     },
     {
-      title: 'Velocity Lab',
-      cat: 'SEO + GROWTH',
-      img: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=1200',
+      title: 'Virafit',
+      cat: 'SAĞLIK & FITNESS',
+      img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200',
       logoId: '1AXuRtmnSbETxcPl2ADUPyAdle2SHvq3g',
-      desc: 'Teknik SEO ve içerik mimarisiyle sürdürülebilir organik büyüme.',
-      stats: '3x Organic'
+      desc: 'SEO ve performans pazarlama ile üye edinim maliyeti düşerken organik trafik 3 kat büyüdü.',
+      stats: '3x Organik Trafik'
     }
   ];
 
@@ -51,6 +51,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
         <div className="flex flex-col md:flex-row justify-between md:items-end mb-8 sm:mb-12 gap-4">
           <div className="max-w-3xl">
             <h2 className="text-4xl md:text-6xl font-[900] tracking-tight text-white">Seçkin <span className="text-[#7DD3FC]">Projeler</span></h2>
+            <p className="mt-3 text-zinc-400 text-sm sm:text-base">Referans markalarımızla birlikte hayata geçirdiğimiz performans odaklı büyüme hikayeleri.</p>
           </div>
           {limit && onNavigate && (
             <button
