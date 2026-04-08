@@ -6,8 +6,9 @@ const ReferenceLogo = React.memo<{ name: string; logoId: string; services: strin
   const logoUrl = `https://lh3.googleusercontent.com/d/${logoId}`;
 
   return (
-    <article className="group relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-      <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-indigo-100/40 blur-2xl" />
+    <article className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-6 backdrop-blur shadow-[0_10px_25px_rgba(0,0,0,.25)] hover:-translate-y-1 hover:border-cyan-200/40 transition-all duration-300">
+      <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-cyan-300/20 blur-2xl" />
+      <div className="absolute -bottom-12 -left-8 w-24 h-24 rounded-full bg-violet-300/20 blur-2xl" />
 
       <div className="h-28 flex items-center justify-center">
         {!error ? (
@@ -19,15 +20,15 @@ const ReferenceLogo = React.memo<{ name: string; logoId: string; services: strin
             onError={() => setError(true)}
           />
         ) : (
-          <span className="text-xl font-black tracking-tight text-black/30 uppercase">{name}</span>
+          <span className="text-xl font-black tracking-tight text-white/40 uppercase">{name}</span>
         )}
       </div>
 
-      <div className="mt-4 pt-4 border-t border-zinc-100">
-        <h4 className="text-[10px] font-black tracking-[0.35em] text-zinc-400 uppercase mb-3">Hizmetler</h4>
+      <div className="mt-4 pt-4 border-t border-white/10">
+        <h4 className="text-[10px] font-black tracking-[0.35em] text-zinc-300 uppercase mb-3">Hizmetler</h4>
         <div className="flex flex-wrap gap-2">
           {services.map((service, i) => (
-            <span key={i} className="text-[11px] font-bold text-zinc-600 bg-zinc-50 px-3 py-1 rounded-full border border-zinc-200">
+            <span key={i} className="text-[11px] font-bold text-zinc-200 bg-white/10 px-3 py-1 rounded-full border border-white/15">
               {service}
             </span>
           ))}
@@ -48,15 +49,15 @@ const References: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-b from-white to-[#F8FAFC] overflow-hidden">
+    <section className="py-16 sm:py-20 bg-[#060A12] overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-12">
           <div>
             <span className="text-[10px] uppercase tracking-[0.55em] font-[900] text-zinc-400">GÜVENEN MARKALAR</span>
-            <h2 className="mt-3 text-3xl md:text-5xl font-[900] tracking-tight text-[#0F172A]">Referanslarımız & Başarı Ekosistemi</h2>
-            <p className="mt-3 text-zinc-600 max-w-2xl">Farklı sektörlerde elde ettiğimiz ölçülebilir sonuçlar sayesinde markaların dijital büyümesini sürdürülebilir hale getiriyoruz.</p>
+            <h2 className="mt-3 text-3xl md:text-5xl font-[900] tracking-tight text-white">Referanslarımız & Başarı Ekosistemi</h2>
+            <p className="mt-3 text-zinc-400 max-w-2xl">Farklı sektörlerde elde ettiğimiz ölçülebilir sonuçlar sayesinde markaların dijital büyümesini sürdürülebilir hale getiriyoruz.</p>
           </div>
-          <button className="inline-flex items-center gap-2 w-fit px-4 py-2.5 rounded-xl bg-zinc-900 text-white text-xs uppercase tracking-[0.18em] font-black">
+          <button className="inline-flex items-center gap-2 w-fit px-4 py-2.5 rounded-xl bg-white/10 border border-white/15 text-white text-xs uppercase tracking-[0.18em] font-black">
             Case Study İncele
             <ArrowUpRight size={14} />
           </button>
