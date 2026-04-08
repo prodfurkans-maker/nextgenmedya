@@ -4,7 +4,7 @@ import { MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const WhatsAppButton: React.FC = () => {
-  const phoneNumber = "905434123380"; // Format for WhatsApp link
+  const phoneNumber = "905364290919"; // Format for WhatsApp link
   const message = "Merhaba, hizmetleriniz hakkında bilgi almak istiyorum.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

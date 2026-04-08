@@ -17,6 +17,8 @@ import TermsPage from './components/TermsPage';
 import PrivacyPage from './components/PrivacyPage';
 import KvkkPage from './components/KvkkPage';
 import MobileBottomNav from './components/MobileBottomNav';
+import CookiePolicyPage from './components/CookiePolicyPage';
+import CookieConsent from './components/CookieConsent';
 
 const BASE_URL = 'https://nextgenmedya.com';
 
@@ -82,6 +84,12 @@ const SEO_BY_PAGE: Record<string, SeoMeta> = {
     description: 'NextGen Medya web sitesi kullanım koşulları.',
     keywords: 'kullanım koşulları, yasal',
     canonicalPath: '/kullanim-kosullari'
+  },
+  cookies: {
+    title: 'Çerez Politikası | NextGen Medya',
+    description: 'NextGen Medya çerez kullanımı ve tercih yönetimi.',
+    keywords: 'çerez politikası, cookie policy',
+    canonicalPath: '/cerez-politikasi'
   },
   'project-detail': {
     title: 'Proje Detayı | NextGen Medya',
@@ -187,6 +195,8 @@ const App: React.FC = () => {
         return <PrivacyPage />;
       case 'terms':
         return <TermsPage />;
+      case 'cookies':
+        return <CookiePolicyPage />;
       default:
         return <Hero onNavigate={setActivePage} onProjectSelect={handleProjectSelect} />;
     }
@@ -207,6 +217,7 @@ const App: React.FC = () => {
       <Footer onNavigate={setActivePage} />
       <WhatsAppButton />
       <MobileBottomNav activePage={activePage} onNavigate={(page) => { setActivePage(page); setSelectedProject(null); }} />
+      <CookieConsent onNavigate={(page) => { setActivePage(page); setSelectedProject(null); }} />
     </div>
   );
 };

@@ -150,8 +150,8 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
                 <a href="mailto:info@nextgenmedya.com" className="block text-white font-bold text-sm">
                   info@nextgenmedya.com
                 </a>
-                <a href="tel:05434123380" className="block text-indigo-100/70 font-semibold text-sm">
-                  0543 412 33 80
+                <a href="tel:05364290919" className="block text-indigo-100/70 font-semibold text-sm">
+                  0536 429 09 19
                 </a>
               </div>
             </motion.div>
