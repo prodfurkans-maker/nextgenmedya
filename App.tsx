@@ -8,6 +8,7 @@ import ProjectDetail from './components/ProjectDetail';
 import References from './components/References';
 import Process from './components/Process';
 import SeoFaq from './components/SeoFaq';
+import HomeInsights from './components/HomeInsights';
 import CTA from './components/CTA';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -138,6 +139,7 @@ const App: React.FC = () => {
             <References />
             <Services limit={3} onNavigate={() => setActivePage('services')} />
             <Process />
+            <HomeInsights />
             <Portfolio limit={4} onNavigate={() => setActivePage('portfolio')} onProjectSelect={handleProjectSelect} />
             <SeoFaq />
             <CTA onNavigate={() => setActivePage('contact')} />
@@ -162,7 +164,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#F8FAFC] to-white">
       <Navbar
         activePage={activePage}
         onNavigate={(page) => {

@@ -1,15 +1,15 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-20 sm:py-24 bg-gradient-to-b from-[#F8FAFC] to-white">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
           <div>
             <span className="text-[10px] uppercase tracking-[0.5em] font-black text-gray-400 mb-6 block">İLETİŞİM</span>
-            <h2 className="text-5xl md:text-7xl font-[900] text-black mb-12 tracking-tight">Tanışalım.</h2>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-[900] text-[#0F172A] mb-10 sm:mb-12 tracking-tight">Premium bir büyüme planı oluşturalım.</h2>
             
             <div className="space-y-12 mb-16">
               <div className="flex items-start space-x-8">
@@ -42,23 +42,23 @@ const Contact: React.FC = () => {
             </div>
           </div>
           
-          <div className="bg-[#000000] p-12 md:p-20 shadow-2xl">
+          <div className="bg-gradient-to-br from-[#0B1020] to-[#121B3A] p-8 sm:p-12 md:p-16 shadow-2xl rounded-3xl border border-indigo-200/20">
             <h3 className="text-3xl font-[900] text-white mb-12 tracking-tight">Yeni Bir Proje mi Var?</h3>
             <form className="space-y-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="flex flex-col">
-                  <label className="text-[10px] uppercase tracking-[0.3em] font-black text-gray-500 mb-4">AD SOYAD</label>
-                  <input type="text" className="bg-transparent border-b-2 border-gray-800 py-3 text-white focus:outline-none focus:border-white transition-colors font-bold" placeholder="Tam adınız" />
+                  <label className="text-[10px] uppercase tracking-[0.3em] font-black text-indigo-200/60 mb-4">AD SOYAD</label>
+                  <input type="text" className="bg-transparent border-b-2 border-indigo-200/20 py-3 text-white focus:outline-none focus:border-white transition-colors font-bold" placeholder="Tam adınız" />
                 </div>
                 <div className="flex flex-col">
-                  <label className="text-[10px] uppercase tracking-[0.3em] font-black text-gray-500 mb-4">E-POSTA</label>
-                  <input type="email" className="bg-transparent border-b-2 border-gray-800 py-3 text-white focus:outline-none focus:border-white transition-colors font-bold" placeholder="E-posta adresiniz" />
+                  <label className="text-[10px] uppercase tracking-[0.3em] font-black text-indigo-200/60 mb-4">E-POSTA</label>
+                  <input type="email" className="bg-transparent border-b-2 border-indigo-200/20 py-3 text-white focus:outline-none focus:border-white transition-colors font-bold" placeholder="E-posta adresiniz" />
                 </div>
               </div>
               
               <div className="flex flex-col">
-                <label className="text-[10px] uppercase tracking-[0.3em] font-black text-gray-500 mb-4">İLGİLENDİĞİNİZ HİZMET</label>
-                <select className="bg-transparent border-b-2 border-gray-800 py-4 text-white focus:outline-none focus:border-white transition-colors appearance-none font-bold cursor-pointer">
+                <label className="text-[10px] uppercase tracking-[0.3em] font-black text-indigo-200/60 mb-4">İLGİLENDİĞİNİZ HİZMET</label>
+                <select className="bg-transparent border-b-2 border-indigo-200/20 py-4 text-white focus:outline-none focus:border-white transition-colors appearance-none font-bold cursor-pointer">
                   <option className="bg-black">360 Sosyal Medya Yönetimi</option>
                   <option className="bg-black">SEO & Teknik SEO</option>
                   <option className="bg-black">Google Ads / Meta Ads</option>
@@ -68,11 +68,11 @@ const Contact: React.FC = () => {
               </div>
               
               <div className="flex flex-col">
-                <label className="text-[10px] uppercase tracking-[0.3em] font-black text-gray-500 mb-4">MESAJINIZ</label>
-                <textarea rows={4} className="bg-transparent border-b-2 border-gray-800 py-3 text-white focus:outline-none focus:border-white transition-colors resize-none font-bold" placeholder="Proje detaylarından bahsedin..."></textarea>
+                <label className="text-[10px] uppercase tracking-[0.3em] font-black text-indigo-200/60 mb-4">MESAJINIZ</label>
+                <textarea rows={4} className="bg-transparent border-b-2 border-indigo-200/20 py-3 text-white focus:outline-none focus:border-white transition-colors resize-none font-bold" placeholder="Proje detaylarından bahsedin..."></textarea>
               </div>
               
-              <button className="w-full bg-white text-black py-6 font-[900] uppercase tracking-[0.3em] text-[11px] hover:bg-gray-200 transition-all shadow-xl">
+              <button className="w-full bg-gradient-to-r from-[#F8D57E] to-[#E8B84A] text-[#111827] py-5 font-[900] uppercase tracking-[0.3em] text-[11px] hover:bg-gray-200 transition-all shadow-xl">
                 TEKLİF TALEBİ GÖNDER
               </button>
             </form>

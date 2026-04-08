@@ -3,9 +3,9 @@ import React from 'react';
 
 const About: React.FC = () => {
   return (
-    <div className="bg-white selection:bg-black selection:text-white">
+    <div className="bg-gradient-to-b from-[#F8FAFC] via-white to-[#EEF2FF] selection:bg-black selection:text-white">
       {/* Hero Section */}
-      <section className="pt-10 pb-24">
+      <section className="pt-6 sm:pt-10 pb-16 sm:pb-24">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-6xl">
             <div className="flex items-center space-x-4 mb-10">
@@ -40,7 +40,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Hakkımızda Detay */}
-      <section className="py-32 bg-zinc-50/50">
+      <section className="py-20 sm:py-32 bg-gradient-to-b from-white to-[#F1F5FF]">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
             <div className="lg:col-span-6 order-2 lg:order-1">
@@ -75,7 +75,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Misyon & Vizyon */}
-      <section className="py-40">
+      <section className="py-20 sm:py-32">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-200 border border-zinc-200 rounded-3xl overflow-hidden shadow-2xl">
             <div className="p-12 md:p-20 bg-white group hover:bg-black transition-all duration-700">
@@ -111,7 +111,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Hizmet Alanlarımız (Hızlı Bakış) */}
-      <section className="py-32 relative z-10 bg-white">
+      <section className="py-20 sm:py-32 relative z-10 bg-gradient-to-b from-white to-[#F8FAFC]">
         <div className="container mx-auto px-6 md:px-12">
           <div className="text-center mb-24">
              <span className="text-[11px] uppercase tracking-[0.8em] font-black text-zinc-400 block mb-6">UZMANLIK ALANLARI</span>
