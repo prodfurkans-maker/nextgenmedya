@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
-const ReferenceLogo = React.memo<{ name: string; logoId: string; services: string[]; zoom?: boolean }>(({ name, logoId, services, zoom }) => {
+const ReferenceLogo = React.memo<{ name: string; logoId?: string; logoSrc?: string; services: string[]; zoom?: boolean }>(({ name, logoId, logoSrc, services, zoom }) => {
   const [error, setError] = useState(false);
-  const logoUrl = `https://lh3.googleusercontent.com/d/${logoId}`;
+  const logoUrl = logoSrc || `https://lh3.googleusercontent.com/d/${logoId}`;
 
   return (
     <article className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-6 backdrop-blur shadow-[0_10px_25px_rgba(0,0,0,.25)] hover:-translate-y-1 hover:border-cyan-200/40 transition-all duration-300">
@@ -12,13 +12,15 @@ const ReferenceLogo = React.memo<{ name: string; logoId: string; services: strin
 
       <div className="h-32 flex items-center justify-center">
         {!error ? (
-          <img
-            src={logoUrl}
-            alt={name}
-            loading="lazy"
-            className={`object-contain transition-transform duration-500 group-hover:scale-105 ${zoom ? 'max-w-[240px] max-h-[160px]' : 'max-w-[210px] max-h-[140px]'}`}
-            onError={() => setError(true)}
-          />
+          <div className="w-full h-full border border-white/15 bg-black/40 p-2 rounded-none">
+            <img
+              src={logoUrl}
+              alt={name}
+              loading="lazy"
+              className={`w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 ${zoom ? 'scale-[1.03]' : ''}`}
+              onError={() => setError(true)}
+            />
+          </div>
         ) : (
           <span className="text-xl font-black tracking-tight text-white/40 uppercase">{name}</span>
         )}
@@ -42,7 +44,7 @@ ReferenceLogo.displayName = 'ReferenceLogo';
 
 const References: React.FC = () => {
   const brands = [
-    { name: 'HILLSTONE PENDIK', id: '1mpzqBGdkaSVV4dCzemn8REuPcQlF2ldm', services: ['Drone Çekimi', 'Sosyal Medya', 'Web Yönetimi', 'Lead Generation'], zoom: true },
+    { name: 'HILLSTONE PENDIK', logoSrc: '/hillstone-logo.svg', services: ['Drone Çekimi', 'Sosyal Medya', 'Web Yönetimi', 'Lead Generation'], zoom: true },
     { name: 'ON MÜZİK', id: '1QSf3qBwqTFb7yL6x6l5f5KVDRkX0pe5D', services: ['Prodüksiyon', 'Dijital Dağıtım', 'Marka Kimliği', 'Google Ads'] },
     { name: 'MJORA BUTIK', id: '1wDaiq6v8qkkR6deMQs2PvH5AOD_gz_eg', services: ['E-Ticaret', 'Ürün Çekimi', 'Reklam Yönetimi', 'Dönüşüm Artışı'] },
     { name: 'VIRAFIT', id: '1AXuRtmnSbETxcPl2ADUPyAdle2SHvq3g', services: ['İçerik Üretimi', 'SEO', 'Mobil Uygulama', 'Performans Pazarlama'] }
@@ -65,7 +67,7 @@ const References: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-stretch">
           {brands.map((brand, idx) => (
-            <ReferenceLogo key={idx} name={brand.name} logoId={brand.id} services={brand.services} zoom={brand.zoom} />
+            <ReferenceLogo key={idx} name={brand.name} logoId={brand.id} logoSrc={brand.logoSrc} services={brand.services} zoom={brand.zoom} />
           ))}
         </div>
       </div>
