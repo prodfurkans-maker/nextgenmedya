@@ -15,7 +15,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
       img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000',
       logoId: '1mpzqBGdkaSVV4dCzemn8REuPcQlF2ldm',
       desc: 'Kurumsal web + reklam + prodüksiyon ile görünürlüğü %85 artırdık.',
-      stats: '2.5M+ Gösterim'
+      stats: '2.5M+ Gösterim',
+      method: 'Marka konumlandırma + performans medya + kreatif içerik'
     },
     {
       title: 'On Müzik',
@@ -23,7 +24,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
       img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=1000',
       logoId: '1QSf3qBwqTFb7yL6x6l5f5KVDRkX0pe5D',
       desc: 'Performans odaklı kampanyalar ile satış hacminde %120 büyüme.',
-      stats: '%120 Satış Artışı'
+      stats: '%120 Satış Artışı',
+      method: 'E-ticaret funnel optimizasyonu + kanal kırılımı'
     },
     {
       title: 'Mjora Butik',
@@ -31,7 +33,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
       img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1000',
       logoId: '1wDaiq6v8qkkR6deMQs2PvH5AOD_gz_eg',
       desc: 'Google + Meta optimizasyonuyla 4.5 ROAS verimi elde edildi.',
-      stats: '4.5 ROAS'
+      stats: '4.5 ROAS',
+      method: 'Kreatif test döngüsü + satın alma optimizasyonu'
     },
     {
       title: 'Virafit',
@@ -39,7 +42,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
       img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1000',
       logoId: '1AXuRtmnSbETxcPl2ADUPyAdle2SHvq3g',
       desc: 'SEO + performans pazarlama ile maliyet düştü, trafik 3x arttı.',
-      stats: '3x Organik Trafik'
+      stats: '3x Organik Trafik',
+      method: 'Teknik SEO + dönüşüm odaklı landing yapısı'
     }
   ];
 
@@ -49,9 +53,10 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
     <section className="py-16 sm:py-20 bg-white">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between md:items-end mb-8 sm:mb-12 gap-4">
-          <div className="max-w-2xl">
-            <span className="text-[10px] uppercase tracking-[0.4em] font-black text-zinc-400 mb-2 block">VAKA ÇALIŞMALARI</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-[900] tracking-tight text-[#0F172A]">Gerçek Sonuçlar, Net Etki</h2>
+          <div className="max-w-3xl">
+            <span className="text-[10px] uppercase tracking-[0.45em] font-black text-zinc-400 mb-2 block">PORTFOLYO</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-[900] tracking-tight text-[#0F172A]">Estetik Tasarım + Ölçülebilir Performans</h2>
+            <p className="mt-3 text-zinc-600 text-sm sm:text-base leading-relaxed">Her projede görsel kaliteyi, kullanıcı deneyimini ve dönüşüm metriklerini aynı çatı altında optimize ediyoruz.</p>
           </div>
           {limit && onNavigate && (
             <button
@@ -73,7 +78,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img src={project.img} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
                 <span className="absolute top-4 left-4 text-[10px] font-black tracking-wider uppercase bg-white text-zinc-900 rounded-full px-3 py-1.5">
                   {project.cat}
                 </span>
@@ -83,8 +88,12 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
                 </div>
               </div>
               <div className="p-5">
-                <h3 className="text-2xl font-[900] tracking-tight text-[#0F172A]">{project.title}</h3>
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="text-2xl font-[900] tracking-tight text-[#0F172A]">{project.title}</h3>
+                  <span className="text-[11px] uppercase tracking-[0.2em] font-black text-zinc-400">0{idx + 1}</span>
+                </div>
                 <p className="mt-2 text-zinc-600 text-sm leading-relaxed">{project.desc}</p>
+                <p className="mt-3 text-[12px] text-zinc-500 font-semibold">Strateji: {project.method}</p>
               </div>
             </button>
           ))}
