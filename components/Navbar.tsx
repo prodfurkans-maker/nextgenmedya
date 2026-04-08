@@ -65,8 +65,8 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
             </div>
             <div className="min-w-0">
               <p className="font-[900] tracking-tight text-sm sm:text-base md:text-lg truncate [font-family:'Sora',Inter,sans-serif]">
-                <span className="bg-gradient-to-r from-[#E2E8F0] via-[#BAE6FD] to-[#C4B5FD] bg-clip-text text-transparent">NextGen</span>{' '}
-                <span className="bg-gradient-to-r from-[#C4B5FD] to-[#7DD3FC] bg-clip-text text-transparent">Medya</span>
+                <span className="bg-gradient-to-r from-[#F8FAFC] via-[#CBD5E1] to-[#94A3B8] bg-clip-text text-transparent">NextGen</span>{' '}
+                <span className="bg-gradient-to-r from-[#E2E8F0] to-[#A1A1AA] bg-clip-text text-transparent">Medya</span>
               </p>
               <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.28em] text-zinc-300/70 font-bold truncate">
                 Premium Growth Studio
