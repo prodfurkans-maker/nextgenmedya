@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, CheckCircle2, Sparkles, ShieldCheck, PlayCircle } from 'lucide-react';
+import { ArrowUpRight, PlayCircle } from 'lucide-react';
 
 interface HeroProps {
   onNavigate: (page: string) => void;
@@ -8,85 +8,64 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   return (
-    <section className="relative overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(129,140,248,.22),transparent_38%),radial-gradient(circle_at_80%_10%,rgba(251,191,36,.15),transparent_35%)]" />
+    <section className="relative min-h-[92vh] md:min-h-screen overflow-hidden bg-[#070B14] pt-28 sm:pt-32 pb-14">
+      <div className="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&q=80&w=1800"
+          alt="Abstract 3D background"
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(124,58,237,.25),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,.2),transparent_40%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#070B14]/70 via-[#070B14]/80 to-[#070B14]" />
+      </div>
 
-      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-          <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-4 py-2 text-xs font-bold text-indigo-700 shadow-sm">
-              <Sparkles size={14} /> 2025 UI/UX trendleriyle tasarlanan premium growth partner
-            </div>
+      <div className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 md:px-12">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 backdrop-blur px-4 py-2 text-[10px] sm:text-xs font-black tracking-[0.28em] uppercase text-zinc-200">
+            Creative Digital Agency
+          </span>
 
-            <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-[950] tracking-tight text-[#0F172A] leading-[0.95]">
-              Digital Growth için
-              <span className="block text-indigo-700">Yüksek Dönüşüm Odaklı</span>
-              Tasarım + Pazarlama
-            </h1>
+          <h1 className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-[900] tracking-tight leading-[0.95] text-white">
+            Geleceği Tasarlıyoruz,
+            <span className="block bg-gradient-to-r from-[#C4B5FD] to-[#7DD3FC] bg-clip-text text-transparent">
+              Markanızı Büyütüyoruz
+            </span>
+          </h1>
 
-            <p className="mt-5 text-zinc-600 text-base sm:text-lg max-w-2xl leading-relaxed">
-              SEO, video yapımı, web site geliştirme ve 360° sosyal medya yönetimini tek sistemde birleştiriyoruz.
-              Sonuç: daha yüksek güven, daha güçlü marka algısı ve daha fazla dönüşüm.
-            </p>
+          <p className="mt-5 text-zinc-300 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            Yaratıcılığı teknolojiyle birleştirerek dijital dünyada iz bırakan deneyimler inşa ediyoruz.
+            NextGen Medya ile sınırları zorlayın.
+          </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <button
-                onClick={() => onNavigate('contact')}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#0F172A] to-[#1E293B] text-white text-sm font-black tracking-wide shadow-lg"
-              >
-                Ücretsiz Strateji Görüşmesi
-                <ArrowUpRight size={16} />
-              </button>
-              <button
-                onClick={() => onNavigate('portfolio')}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-zinc-300 bg-white text-zinc-800 text-sm font-black tracking-wide"
-              >
-                Başarı Hikayeleri
-              </button>
-            </div>
-
-            <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {['14+ sektörde aktif proje', 'Ortalama 3.8x ROAS', 'Mobil-first dönüşüm odaklı UX'].map((item) => (
-                <div key={item} className="flex items-start gap-2 rounded-xl border border-zinc-200 bg-white p-3 shadow-sm">
-                  <CheckCircle2 size={16} className="text-emerald-600 mt-0.5" />
-                  <p className="text-xs sm:text-sm font-semibold text-zinc-700">{item}</p>
-                </div>
-              ))}
-            </div>
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+            <button
+              onClick={() => onNavigate('contact')}
+              className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#DDD6FE] to-[#BAE6FD] text-[#0F172A] text-sm font-black"
+            >
+              Projeye Başla
+            </button>
+            <button
+              onClick={() => onNavigate('portfolio')}
+              className="px-7 py-3.5 rounded-xl border border-white/20 bg-white/5 text-white text-sm font-black"
+            >
+              Çalışmalarımız
+            </button>
           </div>
+        </div>
 
-          <div className="lg:col-span-5">
-            <div className="rounded-3xl border border-zinc-200 bg-white/90 backdrop-blur p-4 sm:p-5 shadow-xl">
-              <div className="relative rounded-2xl overflow-hidden aspect-[16/10] border border-zinc-200">
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/8uLlnrvHiCw?autoplay=1&mute=1&controls=0&loop=1&playlist=8uLlnrvHiCw&modestbranding=1&playsinline=1"
-                  title="NextGen Medya Showreel"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                ></iframe>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                  <p className="text-white text-xs font-extrabold tracking-wider uppercase">SHOWREEL / DİJİTAL BÜYÜME</p>
-                  <PlayCircle size={20} className="text-white" />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3 mt-3">
-                <div className="rounded-2xl border border-zinc-200 p-4 bg-zinc-50">
-                  <p className="text-[11px] text-zinc-500 font-bold uppercase tracking-wider">Lead Maliyeti</p>
-                  <p className="text-2xl font-[900] text-[#0F172A] mt-2">-42%</p>
-                </div>
-                <div className="rounded-2xl border border-zinc-200 p-4 bg-zinc-50">
-                  <p className="text-[11px] text-zinc-500 font-bold uppercase tracking-wider">Dönüşüm Oranı</p>
-                  <p className="text-2xl font-[900] text-[#0F172A] mt-2">+31%</p>
-                </div>
-              </div>
-
-              <div className="mt-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 flex items-start gap-2">
-                <ShieldCheck size={18} className="text-emerald-600 mt-0.5" />
-                <p className="text-sm text-emerald-800 font-semibold">Strateji + tasarım + performans tek ekipte, haftalık optimize edilir.</p>
-              </div>
+        <div className="mt-12 max-w-3xl mx-auto rounded-2xl border border-white/15 bg-white/5 backdrop-blur-xl p-3 shadow-2xl">
+          <div className="relative aspect-video rounded-xl overflow-hidden">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/8uLlnrvHiCw?autoplay=1&mute=1&controls=0&loop=1&playlist=8uLlnrvHiCw&modestbranding=1&playsinline=1"
+              title="NextGen Medya Hero Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+            ></iframe>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+            <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs sm:text-sm font-bold tracking-wide">
+              <span>SHOWREEL / NEXTGEN MEDYA</span>
+              <PlayCircle size={18} />
             </div>
           </div>
         </div>
