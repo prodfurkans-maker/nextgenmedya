@@ -17,6 +17,10 @@ const CookiePolicyPage: React.FC = () => {
             <h2 className="font-extrabold text-white mb-2">Tercih Yönetimi</h2>
             <p>Çerez tercihlerinizi tarayıcı ayarlarınızdan veya sitedeki çerez bildirimi üzerinden güncelleyebilirsiniz.</p>
           </div>
+          <div className="rounded-2xl border border-white/15 bg-white/[0.03] p-5">
+            <h2 className="font-extrabold text-white mb-2">Reklam ve Analitik Çerezleri</h2>
+            <p>Analitik çerezler ziyaret davranışlarını anlamamıza, reklam çerezleri ise kampanyaların performansını ölçmemize yardımcı olur.</p>
+          </div>
         </div>
       </div>
     </section>

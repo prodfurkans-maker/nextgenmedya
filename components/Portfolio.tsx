@@ -52,7 +52,9 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
           <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:p-8 mb-8 sm:mb-10">
             <span className="text-[10px] uppercase tracking-[0.35em] font-black text-zinc-400">PORTFÖY</span>
             <h1 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-[900] text-white tracking-tight">Ölçülebilir Başarı Hikayeleri</h1>
-            <p className="mt-4 text-zinc-300 max-w-3xl">Farklı sektörlerde kurduğumuz büyüme kurgularının kanal bazlı etkilerini gerçek projeler üzerinden inceleyin.</p>
+            <p className="mt-4 text-zinc-300 max-w-3xl">
+              Farklı sektörlerde kurduğumuz SEO, performans reklam, sosyal medya ve web dönüşüm kurgularının kanal bazlı etkilerini gerçek projeler üzerinden inceleyin.
+            </p>
           </div>
         )}
 
@@ -90,7 +92,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
               </div>
               <div className="p-5">
                 <h3 className="text-2xl font-[900] tracking-tight text-white">{project.title}</h3>
-                <p className="mt-2 text-zinc-400 text-sm leading-relaxed">{project.desc}</p>
+                <p className="mt-2 text-zinc-400 text-sm leading-relaxed">{project.desc} Projelerde sürdürülebilir müşteri kazanımı için sürekli optimizasyon modeli kullandık.</p>
               </div>
             </button>
           ))}

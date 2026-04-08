@@ -12,6 +12,7 @@ const KvkkPage: React.FC = () => {
           {[
             ['İşlenen Veri Kategorileri', 'Kimlik bilgileri, iletişim bilgileri, talep içerikleri, işlem güvenliği kayıtları ve pazarlama izin tercihleri.'],
             ['İşleme Amaçları', 'Teklif süreçlerinin yürütülmesi, müşteri iletişimi, hizmet operasyonları, sözleşmesel yükümlülükler ve yasal zorunluluklar.'],
+            ['Hukuki Sebepler', 'Veriler; açık rıza, sözleşmenin kurulması/ifası, meşru menfaat ve ilgili mevzuattaki yükümlülükler kapsamında işlenir.'],
             ['Haklarınız', 'KVKK 11. madde kapsamındaki erişim, düzeltme, silme ve itiraz haklarınızı info@nextgenmedya.com adresinden kullanabilirsiniz.']
           ].map(([title, text]) => (
             <div key={title} className="rounded-2xl border border-white/15 bg-white/[0.03] p-5">

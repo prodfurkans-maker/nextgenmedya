@@ -4,7 +4,7 @@ import { Plus } from 'lucide-react';
 const faqItems = [
   {
     q: 'Digital marketing agency olarak hangi hizmetleri veriyorsunuz?',
-    a: 'SEO, teknik SEO, Google Ads/PPC, Meta Ads, video prodüksiyon, web site yapımı, 360° sosyal medya yönetimi ve CRO hizmetleri sunuyoruz.'
+    a: 'SEO, teknik SEO, Google Ads/PPC, Meta Ads, video prodüksiyon, web site yapımı, 360° sosyal medya yönetimi, içerik stratejisi ve CRO hizmetleri sunuyoruz.'
   },
   {
     q: '360 sosyal medya yönetimi neleri kapsar?',
@@ -12,11 +12,19 @@ const faqItems = [
   },
   {
     q: 'Web site yapımı süreciniz nasıl ilerliyor?',
-    a: 'Keşif, UX/UI tasarım, mobil-first geliştirme, teknik SEO kurulumları ve yayın sonrası ölçümleme adımlarıyla ilerler.'
+    a: 'Keşif, UX/UI tasarım, mobil-first geliştirme, teknik SEO kurulumları, hız optimizasyonu ve yayın sonrası ölçümleme adımlarıyla ilerler.'
   },
   {
     q: 'Video yapımı hizmetiniz performans pazarlamayla entegre mi?',
     a: 'Evet. Video prodüksiyon çıktıları reklam hedeflerine göre farklı platform formatlarında optimize edilir.'
+  },
+  {
+    q: 'SEO çalışmalarınız ne kadar sürede sonuç verir?',
+    a: 'Sektör rekabetine göre değişmekle birlikte teknik SEO ve içerik optimizasyonunda ilk iyileşmeler genellikle 6-12 hafta içinde görünür hale gelir.'
+  },
+  {
+    q: 'Hangi sektörlere hizmet veriyorsunuz?',
+    a: 'İnşaat, sağlık, moda, e-ticaret, eğitim ve kurumsal B2B dahil birçok sektörde büyüme odaklı dijital pazarlama projeleri yürütüyoruz.'
   }
 ];
 

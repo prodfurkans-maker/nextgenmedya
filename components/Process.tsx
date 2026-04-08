@@ -3,10 +3,10 @@ import { Step } from '../types';
 
 const Process: React.FC = () => {
   const steps: Step[] = [
-    { id: 1, title: 'Analiz', description: 'Pazar, hedef kitle ve rakip verilerini derin analiz ederek fırsat alanlarını çıkarırız.' },
-    { id: 2, title: 'Strateji', description: 'Kanal bazlı büyüme planı, kreatif yapı ve medya dağılımını net KPI’larla tasarlarız.' },
-    { id: 3, title: 'Üretim', description: 'Web, içerik ve video üretimlerini marka diline uygun, dönüşüm odaklı biçimde hayata geçiririz.' },
-    { id: 4, title: 'Optimizasyon', description: 'Haftalık test-öğren yaklaşımıyla performansı sürekli yükseltip maliyetleri düşürürüz.' }
+    { id: 1, title: 'Analiz', description: 'Pazar, hedef kitle, anahtar kelime ve rakip verilerini analiz ederek hızlı kazanım alanlarını belirleriz.' },
+    { id: 2, title: 'Strateji', description: 'SEO, içerik, reklam ve web dönüşüm katmanlarını tek KPI çerçevesinde bir growth planına dönüştürürüz.' },
+    { id: 3, title: 'Üretim', description: 'Web, içerik ve video prodüksiyon çıktılarını marka diline uygun, satış ve lead üretimi odaklı biçimde hayata geçiririz.' },
+    { id: 4, title: 'Optimizasyon', description: 'Haftalık test-öğren yaklaşımıyla maliyetleri düşürüp dönüşüm oranını artıran sürekli optimizasyon modeli uygularız.' }
   ];
 
   return (

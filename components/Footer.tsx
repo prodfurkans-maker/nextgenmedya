@@ -38,7 +38,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </button>
 
             <p className="text-zinc-200/90 text-base sm:text-lg max-w-md leading-relaxed font-medium">
-              SEO, video yapımı, web site geliştirme ve 360 sosyal medya yönetimiyle markanızı premium bir büyüme sistemine taşıyoruz.
+              SEO, teknik SEO, video prodüksiyon, web site geliştirme, Google Ads / Meta Ads ve 360 sosyal medya yönetimiyle markanızı premium bir büyüme sistemine taşıyoruz.
             </p>
 
             <button

@@ -32,7 +32,10 @@ const Contact: React.FC = () => {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
         <div className="mb-8 sm:mb-10">
           <span className="text-[10px] uppercase tracking-[0.45em] font-black text-zinc-400">İLETİŞİM</span>
-          <h2 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-[900] text-white tracking-tight">Projeniz için premium büyüme planı oluşturalım.</h2>
+          <h2 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-[900] text-white tracking-tight">Projeniz için SEO ve satış odaklı büyüme planı oluşturalım.</h2>
+          <p className="mt-4 text-zinc-300 max-w-3xl">
+            Web site yapımı, teknik SEO, Google Ads, Meta Ads, video prodüksiyon ve sosyal medya yönetimi ihtiyaçlarınızı tek strateji altında planlayıp hızlıca aksiyona alalım.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">

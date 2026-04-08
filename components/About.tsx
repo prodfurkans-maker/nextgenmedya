@@ -14,7 +14,8 @@ const About: React.FC = () => {
             <span className="block bg-gradient-to-r from-[#C4B5FD] to-[#7DD3FC] bg-clip-text text-transparent">Yeni Nesil Mimarları</span>
           </h1>
           <p className="mt-6 max-w-3xl text-zinc-300 text-base sm:text-lg leading-relaxed">
-            NextGen Medya, markalar için yalnızca bir ajans değil; veri, yaratıcılık ve teknolojiyi tek bir büyüme sistemi içinde birleştiren stratejik partnerdir.
+            NextGen Medya, markalar için yalnızca bir ajans değil; SEO, performans pazarlama, yaratıcı içerik üretimi ve teknoloji altyapısını tek bir büyüme sistemi
+            içinde birleştiren stratejik iş ortağıdır.
           </p>
         </div>
       </section>
@@ -32,11 +33,11 @@ const About: React.FC = () => {
           <article className="lg:col-span-5 rounded-3xl border border-white/15 bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-6 sm:p-8">
             <h2 className="text-2xl sm:text-3xl font-[900] tracking-tight">Strateji + Kreatif + Performans</h2>
             <div className="mt-5 space-y-4 text-zinc-300 leading-relaxed">
-              <p>Her projede önce iş hedefini tanımlar, ardından bu hedefe hizmet edecek kanal mimarisini kurarız.</p>
-              <p>Video prodüksiyon, web deneyimi, SEO ve medya satın almayı tek çatı altında yöneterek ölçülebilir bir büyüme akışı oluştururuz.</p>
+              <p>Her projede önce iş hedefini tanımlar, ardından bu hedefe hizmet edecek kanal mimarisini; SEO, içerik, reklam ve dönüşüm optimizasyonu katmanlarıyla kurarız.</p>
+              <p>Video prodüksiyon, web deneyimi, Google Ads / Meta Ads yönetimi ve teknik SEO operasyonunu tek çatı altında yürüterek ölçülebilir müşteri kazanımı sağlarız.</p>
             </div>
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {['Veri Odaklı Karar', 'Haftalık Optimizasyon', 'Uçtan Uca Üretim', 'Şeffaf Raporlama'].map((item) => (
+              {['Veri Odaklı Karar', 'Haftalık Optimizasyon', 'Uçtan Uca Üretim', 'Şeffaf Raporlama', 'Lokal + Global SEO', 'Dönüşüm Odaklı Kreatif'].map((item) => (
                 <span key={item} className="rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-xs font-bold tracking-wide text-zinc-200">
                   {item}
                 </span>

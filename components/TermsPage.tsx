@@ -12,6 +12,7 @@ const TermsPage: React.FC = () => {
           {[
             ['Fikri Mülkiyet', 'Sitedeki tüm metin, görsel, tasarım ve marka öğeleri NextGen Medya’ya aittir veya lisanslı olarak kullanılır.'],
             ['Sorumluluk Sınırı', 'Web sitesindeki bilgiler bilgilendirme amaçlıdır; hizmet kapsamı ve şartları ayrıca sözleşme ile belirlenir.'],
+            ['Kullanıcı Yükümlülükleri', 'Kullanıcılar siteyi hukuka ve dürüst kullanım kurallarına uygun biçimde kullanmayı kabul eder.'],
             ['Güncellemeler', 'NextGen Medya, kullanım koşullarını önceden bildirmeksizin güncelleme hakkını saklı tutar.']
           ].map(([title, text]) => (
             <div key={title} className="rounded-2xl border border-white/15 bg-white/[0.03] p-5">

@@ -31,39 +31,39 @@ type SeoMeta = {
 
 const SEO_BY_PAGE: Record<string, SeoMeta> = {
   home: {
-    title: 'NextGen Medya | Digital Marketing Agency, Video Yapımı, Web Site Yapımı & 360 Sosyal Medya',
+    title: 'NextGen Medya | Digital Marketing Agency, SEO, Web Site Yapımı, Video Prodüksiyon ve 360 Sosyal Medya',
     description:
-      'NextGen Medya; SEO, teknik SEO, video yapımı, web site yapımı, performans reklamcılığı ve 360 sosyal medya yönetimi ile markalara uçtan uca digital marketing agency hizmeti sunar.',
+      'NextGen Medya; SEO, teknik SEO, yapay zeka destekli içerik stratejisi, video prodüksiyon, web site yapımı, performans reklamcılığı ve 360 sosyal medya yönetimi ile markalara uçtan uca dijital büyüme hizmeti sunar.',
     keywords:
-      'digital marketing agency, video yapımı, web site yapımı, 360 sosyal medya yönetimi, teknik seo, performans reklam',
+      'digital marketing agency, seo ajansı, teknik seo, lokal seo, video prodüksiyon, web site yapımı, e-ticaret performans reklam, 360 sosyal medya yönetimi, google ads, meta ads, dönüşüm optimizasyonu',
     canonicalPath: '/'
   },
   corporate: {
     title: 'Kurumsal | NextGen Medya Hakkımızda',
     description:
-      'NextGen Medya; strateji, yaratıcılık ve veriyi birleştirerek markalara sürdürülebilir dijital büyüme sağlayan yeni nesil ajans yaklaşımı sunar.',
-    keywords: 'hakkımızda, dijital ajans vizyonu, yaratıcı ajans, marka stratejisi',
+      'NextGen Medya; strateji, yaratıcılık, performans pazarlama ve veri analitiğini birleştirerek markalara sürdürülebilir dijital büyüme sağlayan yeni nesil ajans modelini sunar.',
+    keywords: 'hakkımızda, dijital ajans vizyonu, performans pazarlama ajansı, marka stratejisi, growth marketing',
     canonicalPath: '/kurumsal'
   },
   services: {
-    title: 'Hizmetler | SEO, Video Prodüksiyon, Web Site Yapımı ve 360 Sosyal Medya',
+    title: 'Hizmetler | SEO, Performans Reklam, Video Prodüksiyon, Web Site Yapımı ve 360 Sosyal Medya',
     description:
-      'SEO ve teknik SEO, video prodüksiyon, web site yapımı, performans reklamcılığı ve 360 sosyal medya yönetimi ile dönüşüm odaklı büyüme sağlayın.',
-    keywords: 'teknik seo, video prodüksiyon, web site yapımı, sosyal medya yönetimi, ppc, google ads',
+      'SEO ve teknik SEO, Google Ads & Meta Ads, video prodüksiyon, web site yapımı, içerik pazarlaması ve 360 sosyal medya yönetimi ile dönüşüm odaklı büyüme sağlayın.',
+    keywords: 'teknik seo, lokal seo, video prodüksiyon, web site yapımı, sosyal medya yönetimi, ppc, google ads, meta ads, cro',
     canonicalPath: '/hizmetler'
   },
   portfolio: {
     title: 'Portföy | NextGen Medya Başarı Hikayeleri',
     description:
-      'Farklı sektörlerde yürüttüğümüz SEO, reklam ve web projeleriyle elde edilen ölçülebilir başarıları inceleyin.',
-    keywords: 'portföy, vaka analizi, başarı hikayeleri, dijital proje örnekleri',
+      'Farklı sektörlerde yürüttüğümüz SEO, reklam yönetimi, içerik üretimi ve web projeleriyle elde edilen ölçülebilir başarıları inceleyin.',
+    keywords: 'portföy, vaka analizi, başarı hikayeleri, dijital proje örnekleri, performans marketing case study',
     canonicalPath: '/portfoy'
   },
   contact: {
     title: 'İletişim | NextGen Medya ile Projenizi Başlatın',
     description:
-      'SEO ve GEO odaklı dijital büyüme planınızı konuşmak için NextGen Medya ekibiyle iletişime geçin.',
-    keywords: 'iletişim, teklif al, dijital ajans iletişim, seo danışmanlığı',
+      'SEO, performans reklam, web tasarım ve video prodüksiyon odaklı dijital büyüme planınızı konuşmak için NextGen Medya ekibiyle iletişime geçin.',
+    keywords: 'iletişim, teklif al, dijital ajans iletişim, seo danışmanlığı, performans pazarlama',
     canonicalPath: '/iletisim'
   },
 

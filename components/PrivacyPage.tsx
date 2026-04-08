@@ -12,6 +12,7 @@ const PrivacyPage: React.FC = () => {
           {[
             ['Veri Güvenliği', 'Veriler; yetkisiz erişim, kayıp veya kötüye kullanıma karşı güncel güvenlik önlemleriyle korunur.'],
             ['Üçüncü Taraf Hizmetler', 'Analitik ve reklam ölçümleme servisleriyle sınırlı veri paylaşımı yapılabilir; servisler kendi politikalarına tabidir.'],
+            ['Saklama Süresi', 'Kişisel veriler, işleme amacı için gerekli süre boyunca veya ilgili mevzuatın öngördüğü yasal sürelerde saklanır.'],
             ['İletişim', 'Gizlilikle ilgili talepleriniz için info@nextgenmedya.com üzerinden bizimle iletişime geçebilirsiniz.']
           ].map(([title, text]) => (
             <div key={title} className="rounded-2xl border border-white/15 bg-white/[0.03] p-5">

@@ -2,9 +2,9 @@ import React from 'react';
 import { TrendingUp, Target, Rocket } from 'lucide-react';
 
 const insights = [
-  { icon: <TrendingUp size={22} />, title: 'Veri Odaklı Büyüme', desc: 'KPI bazlı optimizasyon ile bütçe verimliliğini artırıp sonuçları görünür hale getiriyoruz.' },
-  { icon: <Target size={22} />, title: '360° Strateji', desc: 'SEO + web + video + sosyal medya ekiplerini tek tasarım sistemi ve tek hedefte topluyoruz.' },
-  { icon: <Rocket size={22} />, title: 'Hızlı Uygulama', desc: 'Haftalık iterasyon modeliyle kreatif, teklif ve kampanya katmanlarını sürekli geliştiriyoruz.' }
+  { icon: <TrendingUp size={22} />, title: 'Veri Odaklı Büyüme', desc: 'KPI bazlı optimizasyon ile reklam bütçesi verimliliğini artırıyor, lead ve satış sonuçlarını görünür hale getiriyoruz.' },
+  { icon: <Target size={22} />, title: '360° Strateji', desc: 'SEO + web + video + sosyal medya + performans reklam ekiplerini tek hedefte toplayarak kanal uyumu sağlıyoruz.' },
+  { icon: <Rocket size={22} />, title: 'Hızlı Uygulama', desc: 'Haftalık iterasyon modeliyle kreatif, teklif, landing page ve kampanya katmanlarını sürekli geliştiriyoruz.' }
 ];
 
 const HomeInsights: React.FC = () => {
@@ -13,7 +13,7 @@ const HomeInsights: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12">
         <div className="mb-8 sm:mb-10">
           <span className="text-[10px] uppercase tracking-[0.35em] font-black text-zinc-400">NEDEN NEXTGEN?</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-[900] text-[#0F172A] tracking-tight mt-3">Modern SaaS Disiplini + Kreatif Pazarlama</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-[900] text-[#0F172A] tracking-tight mt-3">Modern Growth Disiplini + Kreatif Pazarlama</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">

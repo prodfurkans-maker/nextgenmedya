@@ -25,7 +25,10 @@ const Services: React.FC<ServicesProps> = ({ limit, onNavigate }) => {
           <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:p-8 mb-8 sm:mb-10">
             <span className="text-[10px] uppercase tracking-[0.35em] font-black text-zinc-400">HİZMETLER</span>
             <h1 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-[900] text-white tracking-tight">Büyüme için Uçtan Uca Servis Ekosistemi</h1>
-            <p className="mt-4 text-zinc-300 max-w-3xl">Strateji, kreatif üretim, medya satın alma ve teknik altyapı katmanlarını tek ekipte birleştirerek sürdürülebilir büyüme sağlıyoruz.</p>
+            <p className="mt-4 text-zinc-300 max-w-3xl">
+              Strateji, kreatif üretim, medya satın alma, SEO ve teknik altyapı katmanlarını tek ekipte birleştirerek sürdürülebilir büyüme, kaliteli lead üretimi
+              ve satış odaklı dijital performans sağlıyoruz.
+            </p>
           </div>
         )}
 
@@ -55,6 +58,13 @@ const Services: React.FC<ServicesProps> = ({ limit, onNavigate }) => {
             </article>
           ))}
         </div>
+
+        {!limit && (
+          <p className="mt-8 text-sm text-zinc-400 leading-relaxed max-w-4xl">
+            Hizmet paketlerimiz; e-ticaret, sağlık, inşaat, eğitim ve kurumsal markalar için sektör dinamiklerine göre özelleştirilir. Böylece reklam bütçesi verimliliği,
+            organik görünürlük ve marka güveni aynı anda güçlenir.
+          </p>
+        )}
       </div>
     </section>
   );

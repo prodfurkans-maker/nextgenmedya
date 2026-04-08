@@ -34,8 +34,8 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             </h1>
 
             <p className="mt-5 text-zinc-300 text-sm sm:text-lg max-w-2xl lg:max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Yaratıcılığı teknolojiyle birleştirerek dijital dünyada iz bırakan deneyimler inşa ediyoruz.
-              NextGen Medya ile sınırları zorlayın.
+              SEO, performans reklamcılığı, web site yapımı, video prodüksiyon ve 360 sosyal medya yönetimini tek growth çatısı altında birleştiriyor;
+              markanız için sürdürülebilir müşteri kazanımı sağlıyoruz.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-3">
