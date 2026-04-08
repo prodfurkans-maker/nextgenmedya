@@ -8,55 +8,28 @@ interface ServicesProps {
 
 const Services: React.FC<ServicesProps> = ({ limit, onNavigate }) => {
   const allServices = [
-    {
-      title: 'SEO & Teknik SEO',
-      icon: <Search />,
-      desc: 'Site mimarisi, hız optimizasyonu, schema, teknik audit, anahtar kelime kümeleri ve içerik stratejisi ile sürdürülebilir organik büyüme.'
-    },
-    {
-      title: 'Performans Reklamcılığı',
-      icon: <Megaphone />,
-      desc: 'Google Ads, Meta Ads, YouTube ve remarketing kurguları ile ROAS odaklı kampanya yönetimi ve günlük optimizasyon.'
-    },
-    {
-      title: 'Video Yapımı',
-      icon: <Video />,
-      desc: 'Reels, kısa-form reklam videoları, marka filmi ve ürün videoları dahil uçtan uca prodüksiyon ve post-prodüksiyon hizmeti.'
-    },
-    {
-      title: 'Web Site Yapımı',
-      icon: <MonitorSmartphone />,
-      desc: 'Mobil-first, hızlı ve SEO uyumlu kurumsal web siteleri ile landing page altyapıları; dönüşüm odaklı UX/UI tasarım.'
-    },
-    {
-      title: '360° Sosyal Medya Yönetimi',
-      icon: <Share2 />,
-      desc: 'İçerik planlama, kreatif üretim, topluluk yönetimi, aylık raporlama ve kanal bazlı büyüme stratejileri.'
-    },
-    {
-      title: 'CRO & Analitik',
-      icon: <Gauge />,
-      desc: 'GA4, Tag Manager, dönüşüm izleme, A/B testleri ve funnel optimizasyonu ile pazarlama bütçesini verimli hale getirme.'
-    }
+    { title: 'SEO & Teknik SEO', icon: <Search />, desc: 'Site mimarisi, hız, schema, içerik cluster ve teknik audit ile organik büyüme.' },
+    { title: 'Performans Reklamcılığı', icon: <Megaphone />, desc: 'Google/Meta/YouTube kampanyalarıyla ROAS odaklı ölçeklenebilir reklam yönetimi.' },
+    { title: 'Video Yapımı', icon: <Video />, desc: 'Reels, reklam kreatifleri, ürün videoları ve marka filmi dahil uçtan uca prodüksiyon.' },
+    { title: 'Web Site Yapımı', icon: <MonitorSmartphone />, desc: 'Mobil-first, hızlı ve dönüşüm odaklı web siteleri ve landing page altyapıları.' },
+    { title: '360° Sosyal Medya', icon: <Share2 />, desc: 'Planlama, kreatif, topluluk yönetimi ve düzenli raporlama ile kanal büyümesi.' },
+    { title: 'CRO & Analitik', icon: <Gauge />, desc: 'GA4 + GTM kurulumu, A/B testleri ve funnel optimizasyonu ile verimlilik artışı.' }
   ];
 
   const services = limit ? allServices.slice(0, limit) : allServices;
 
   return (
-    <section className="py-20 sm:py-24 bg-gradient-to-b from-[#f8fafc] to-white">
+    <section className="py-16 sm:py-20 bg-gradient-to-b from-[#F8FAFC] to-white">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
-        <div className="flex flex-col md:flex-row justify-between md:items-end mb-12 sm:mb-16 gap-6">
+        <div className="flex flex-col md:flex-row justify-between md:items-end mb-8 sm:mb-12 gap-4">
           <div className="max-w-4xl">
-            <span className="text-[10px] uppercase tracking-[0.35em] font-black text-zinc-400 mb-3 block">HİZMETLER</span>
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-[900] tracking-tight text-zinc-900 mb-4">Digital Marketing Agency Çözümleri</h2>
-            <p className="text-zinc-600 text-base sm:text-lg leading-relaxed max-w-3xl font-medium">
-              Global agency standartlarına uygun şekilde SEO, performans reklamcılığı, video üretimi, web site geliştirme ve 360 sosyal medya yönetimini tek ekipte birleştiriyoruz.
-            </p>
+            <span className="text-[10px] uppercase tracking-[0.35em] font-black text-zinc-400 mb-2 block">HİZMETLER</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-[900] tracking-tight text-[#0F172A]">Yüksek Dönüşüm Odaklı Service Stack</h2>
           </div>
           {limit && onNavigate && (
             <button
               onClick={() => onNavigate('services')}
-              className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] font-black border border-zinc-200 rounded-xl px-4 py-3 hover:bg-zinc-900 hover:text-white transition-all w-fit"
+              className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] font-black border border-zinc-300 rounded-xl px-4 py-3 bg-white hover:bg-zinc-100 transition-all w-fit"
             >
               Tüm Hizmetler
               <ArrowUpRight size={14} />
@@ -64,17 +37,17 @@ const Services: React.FC<ServicesProps> = ({ limit, onNavigate }) => {
           )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
           {services.map((item, idx) => (
             <article
               key={idx}
-              className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl group border border-zinc-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="group rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="w-11 h-11 sm:w-12 sm:h-12 mb-6 text-zinc-900 bg-zinc-100 rounded-xl flex items-center justify-center group-hover:bg-zinc-900 group-hover:text-white transition-all">
+              <div className="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center mb-4 group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
                 {item.icon}
               </div>
-              <h3 className="text-xl sm:text-2xl font-[900] mb-3 text-zinc-900">{item.title}</h3>
-              <p className="text-sm sm:text-base text-zinc-500 font-medium leading-relaxed">{item.desc}</p>
+              <h3 className="text-xl font-[900] mb-2 text-[#0F172A] tracking-tight">{item.title}</h3>
+              <p className="text-sm text-zinc-600 leading-relaxed">{item.desc}</p>
             </article>
           ))}
         </div>

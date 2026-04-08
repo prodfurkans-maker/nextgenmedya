@@ -16,6 +16,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 import TermsPage from './components/TermsPage';
 import PrivacyPage from './components/PrivacyPage';
 import KvkkPage from './components/KvkkPage';
+import MobileBottomNav from './components/MobileBottomNav';
 
 const BASE_URL = 'https://nextgenmedya.com';
 
@@ -200,11 +201,12 @@ const App: React.FC = () => {
           setSelectedProject(null);
         }}
       />
-      <main className={`flex-grow ${activePage === 'project-detail' ? 'pt-0' : 'pt-24 md:pt-28'}`}>
+      <main className={`flex-grow ${activePage === 'project-detail' ? 'pt-0 pb-24 md:pb-0' : 'pt-24 md:pt-28 pb-24 md:pb-0'}`}>
         {renderContent()}
       </main>
       <Footer onNavigate={setActivePage} />
       <WhatsAppButton />
+      <MobileBottomNav activePage={activePage} onNavigate={(page) => { setActivePage(page); setSelectedProject(null); }} />
     </div>
   );
 };

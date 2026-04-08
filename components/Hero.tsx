@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react';
+import React from 'react';
+import { ArrowUpRight, CheckCircle2, BarChart3, Sparkles, ShieldCheck } from 'lucide-react';
 
 interface HeroProps {
   onNavigate: (page: string) => void;
@@ -8,188 +7,81 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  const slides = [
-    {
-      id: 'hillstone',
-      title: 'Hillstone Pendik',
-      subtitle: 'WEB TASARIM & SOSYAL MEDYA',
-      desc: "Hillstone Pendik'in kurumsal web sitesini hayata geçirip reklam ve prodüksiyon süreçleriyle dijital görünürlüğü %85 artırdık.",
-      logoId: '1mpzqBGdkaSVV4dCzemn8REuPcQlF2ldm',
-      videoUrl:
-        'https://www.youtube.com/embed/8uLlnrvHiCw?autoplay=1&mute=1&controls=0&loop=1&playlist=8uLlnrvHiCw&si=OdaSKWS5mp-fV26O&enablejsapi=1',
-      img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000',
-      type: 'video',
-      stats: '2.5M+ GÖSTERİM',
-      duration: 45000
-    },
-    {
-      id: 'onmuzik',
-      title: 'On Müzik',
-      subtitle: 'META ADS & SATIŞ YÖNETİMİ',
-      desc: 'DJ ekipmanları ve profesyonel ses sistemleri satışında performans reklam yönetimi ile satış hacmini %120 artırdık.',
-      logoId: '1QSf3qBwqTFb7yL6x6l5f5KVDRkX0pe5D',
-      img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=2000',
-      stats: '%120 SATIŞ ARTIŞI',
-      type: 'image',
-      duration: 8000
-    },
-    {
-      id: 'mjora',
-      title: 'Mjora Butik',
-      subtitle: 'E-TİCARET & REKLAM YÖNETİMİ',
-      desc: 'Meta ve Google reklam optimizasyonu ile ROAS oranını 4.5 seviyesine çıkararak sürdürülebilir satış artışı sağladık.',
-      logoId: '1wDaiq6v8qkkR6deMQs2PvH5AOD_gz_eg',
-      img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=2000',
-      stats: '4.5 ROAS VERİMİ',
-      type: 'image',
-      duration: 8000
-    },
-    {
-      id: 'virafit',
-      title: 'Virafit',
-      subtitle: 'META ADS & SEO',
-      desc: 'Performans pazarlaması ve SEO çalışmalarıyla üye kayıt maliyetini %40 düşürüp organik trafiği 3 katına çıkardık.',
-      logoId: '1AXuRtmnSbETxcPl2ADUPyAdle2SHvq3g',
-      img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=2000',
-      stats: '3X ORGANİK TRAFİK',
-      type: 'image',
-      duration: 8000
-    }
-  ];
-
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, slides[currentSlide].duration || 8000);
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, currentSlide, slides]);
-
-  const nextSlide = () => {
-    setIsAutoPlaying(false);
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setIsAutoPlaying(false);
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
   return (
-    <section className="relative min-h-[92vh] sm:min-h-screen flex items-center overflow-hidden bg-black rounded-b-[2rem] sm:rounded-b-[3rem]">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.55 }}
-          className="absolute inset-0"
-        >
-          {slides[currentSlide].type === 'video' ? (
-            <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none scale-110">
-              <iframe
-                className="absolute top-1/2 left-1/2 w-[120vw] h-[68vw] min-h-[105vh] min-w-[190vh] -translate-x-1/2 -translate-y-1/2"
-                src={slides[currentSlide].videoUrl}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-              ></iframe>
-            </div>
-          ) : (
-            <img src={slides[currentSlide].img} alt={slides[currentSlide].title} className="w-full h-full object-cover" />
-          )}
-        </motion.div>
-      </AnimatePresence>
+    <section className="relative overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(129,140,248,.22),transparent_38%),radial-gradient(circle_at_80%_10%,rgba(251,191,36,.15),transparent_35%)]" />
 
-      <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/55 to-black/70" />
-      <div className="absolute -top-32 -right-24 w-80 h-80 bg-white/10 blur-3xl rounded-full" />
-
-      <div className="relative z-20 max-w-[1400px] mx-auto w-full px-4 sm:px-6 md:px-12 pt-28 sm:pt-32 pb-14 sm:pb-16">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -18 }}
-            transition={{ duration: 0.65, ease: 'easeOut' }}
-            className="max-w-4xl"
-          >
-            <div className="inline-flex items-center gap-3 sm:gap-4 bg-white/10 border border-white/15 rounded-2xl p-3 pr-4 sm:pr-5 backdrop-blur-lg mb-7 sm:mb-10">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-xl p-1.5 flex items-center justify-center overflow-hidden">
-                <img
-                  src={`https://lh3.googleusercontent.com/d/${slides[currentSlide].logoId}`}
-                  alt={slides[currentSlide].title}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div>
-                <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-zinc-300 font-black">
-                  {slides[currentSlide].subtitle}
-                </p>
-                <p className="text-[10px] sm:text-xs text-white font-extrabold mt-1">{slides[currentSlide].stats}</p>
-              </div>
+      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <div className="lg:col-span-7">
+            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-4 py-2 text-xs font-bold text-indigo-700 shadow-sm">
+              <Sparkles size={14} /> 2025 UI/UX trendleriyle tasarlanan premium growth partner
             </div>
 
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-[950] tracking-tight text-white leading-[0.9] uppercase">
-              {slides[currentSlide].title}
+            <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-[950] tracking-tight text-[#0F172A] leading-[0.95]">
+              Digital Growth için
+              <span className="block text-indigo-700">Yüksek Dönüşüm Odaklı</span>
+              Tasarım + Pazarlama
             </h1>
 
-            <p className="mt-5 sm:mt-7 text-zinc-200 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl">
-              {slides[currentSlide].desc}
+            <p className="mt-5 text-zinc-600 text-base sm:text-lg max-w-2xl leading-relaxed">
+              SEO, video yapımı, web site geliştirme ve 360° sosyal medya yönetimini tek sistemde birleştiriyoruz.
+              Sonuç: daha yüksek güven, daha güçlü marka algısı ve daha fazla dönüşüm.
             </p>
 
-            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <button
                 onClick={() => onNavigate('contact')}
-                className="inline-flex items-center justify-center gap-2 bg-white text-black rounded-xl px-6 py-3.5 text-[11px] uppercase tracking-[0.22em] font-black hover:bg-zinc-200 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#0F172A] to-[#1E293B] text-white text-sm font-black tracking-wide shadow-lg"
               >
-                Proje Başlat
-                <ArrowUpRight size={15} />
+                Ücretsiz Strateji Görüşmesi
+                <ArrowUpRight size={16} />
               </button>
               <button
                 onClick={() => onNavigate('portfolio')}
-                className="inline-flex items-center justify-center gap-2 border border-white/35 text-white rounded-xl px-6 py-3.5 text-[11px] uppercase tracking-[0.22em] font-black hover:bg-white/10 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-zinc-300 bg-white text-zinc-800 text-sm font-black tracking-wide"
               >
-                Çalışmalarımız
+                Başarı Hikayeleri
               </button>
             </div>
-          </motion.div>
-        </AnimatePresence>
 
-        <div className="mt-10 sm:mt-14 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
-          <div className="flex items-center gap-2">
-            {slides.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => {
-                  setIsAutoPlaying(false);
-                  setCurrentSlide(idx);
-                }}
-                className={`h-1.5 rounded-full transition-all duration-500 ${
-                  currentSlide === idx ? 'w-12 bg-white' : 'w-5 bg-white/35'
-                }`}
-              />
-            ))}
+            <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {['14+ sektörde aktif proje', 'Ortalama 3.8x ROAS', 'Mobil-first dönüşüm odaklı UX'].map((item) => (
+                <div key={item} className="flex items-start gap-2 rounded-xl border border-zinc-200 bg-white p-3 shadow-sm">
+                  <CheckCircle2 size={16} className="text-emerald-600 mt-0.5" />
+                  <p className="text-xs sm:text-sm font-semibold text-zinc-700">{item}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            <button
-              onClick={prevSlide}
-              className="w-11 h-11 rounded-xl border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="w-11 h-11 rounded-xl border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
-            >
-              <ChevronRight size={20} />
-            </button>
+          <div className="lg:col-span-5">
+            <div className="rounded-3xl border border-zinc-200 bg-white/90 backdrop-blur p-4 sm:p-5 shadow-xl">
+              <div className="rounded-2xl bg-gradient-to-br from-[#0F172A] to-[#1F2A4A] p-5 text-white">
+                <p className="text-xs uppercase tracking-[0.28em] text-indigo-100/70 font-black">Growth Dashboard</p>
+                <p className="text-3xl font-[900] mt-3">+128%</p>
+                <p className="text-sm text-indigo-100/80 mt-1">3 ayda organik + ücretli toplam büyüme</p>
+                <div className="mt-4 h-24 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center">
+                  <BarChart3 className="text-indigo-100" size={36} />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 mt-3">
+                <div className="rounded-2xl border border-zinc-200 p-4 bg-zinc-50">
+                  <p className="text-[11px] text-zinc-500 font-bold uppercase tracking-wider">Lead Maliyeti</p>
+                  <p className="text-2xl font-[900] text-[#0F172A] mt-2">-42%</p>
+                </div>
+                <div className="rounded-2xl border border-zinc-200 p-4 bg-zinc-50">
+                  <p className="text-[11px] text-zinc-500 font-bold uppercase tracking-wider">Dönüşüm Oranı</p>
+                  <p className="text-2xl font-[900] text-[#0F172A] mt-2">+31%</p>
+                </div>
+              </div>
+
+              <div className="mt-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 flex items-start gap-2">
+                <ShieldCheck size={18} className="text-emerald-600 mt-0.5" />
+                <p className="text-sm text-emerald-800 font-semibold">Strateji + tasarım + performans tek ekipte, haftalık optimize edilir.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
