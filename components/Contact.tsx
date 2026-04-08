@@ -59,10 +59,11 @@ const Contact: React.FC = () => {
               <div className="flex flex-col">
                 <label className="text-[10px] uppercase tracking-[0.3em] font-black text-gray-500 mb-4">İLGİLENDİĞİNİZ HİZMET</label>
                 <select className="bg-transparent border-b-2 border-gray-800 py-4 text-white focus:outline-none focus:border-white transition-colors appearance-none font-bold cursor-pointer">
-                  <option className="bg-black">Sosyal Medya Yönetimi</option>
-                  <option className="bg-black">Dijital Reklamlar</option>
-                  <option className="bg-black">Web Tasarım & UI/UX</option>
-                  <option className="bg-black">Video & Prodüksiyon</option>
+                  <option className="bg-black">360 Sosyal Medya Yönetimi</option>
+                  <option className="bg-black">SEO & Teknik SEO</option>
+                  <option className="bg-black">Google Ads / Meta Ads</option>
+                  <option className="bg-black">Web Site Yapımı</option>
+                  <option className="bg-black">Video Yapımı & Prodüksiyon</option>
                 </select>
               </div>
               

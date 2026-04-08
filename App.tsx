@@ -6,6 +6,8 @@ import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import ProjectDetail from './components/ProjectDetail';
 import References from './components/References';
+import Process from './components/Process';
+import SeoFaq from './components/SeoFaq';
 import CTA from './components/CTA';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -22,11 +24,11 @@ type SeoMeta = {
 
 const SEO_BY_PAGE: Record<string, SeoMeta> = {
   home: {
-    title: 'NextGen Medya | SEO, GEO ve Performans Odaklı Dijital Ajans',
+    title: 'NextGen Medya | Digital Marketing Agency, Video Yapımı, Web Site Yapımı & 360 Sosyal Medya',
     description:
-      'İstanbul merkezli NextGen Medya ile teknik SEO, GEO uyumlu içerik, performans pazarlama ve web geliştirme çözümleriyle dijital büyümenizi hızlandırın.',
+      'NextGen Medya; SEO, teknik SEO, video yapımı, web site yapımı, performans reklamcılığı ve 360 sosyal medya yönetimi ile markalara uçtan uca digital marketing agency hizmeti sunar.',
     keywords:
-      'seo ajansı, geo uyumlu içerik, dijital pazarlama, performans ajansı, web tasarım, istanbul dijital ajans',
+      'digital marketing agency, video yapımı, web site yapımı, 360 sosyal medya yönetimi, teknik seo, performans reklam',
     canonicalPath: '/'
   },
   corporate: {
@@ -37,10 +39,10 @@ const SEO_BY_PAGE: Record<string, SeoMeta> = {
     canonicalPath: '/kurumsal'
   },
   services: {
-    title: 'Hizmetler | SEO, GEO, Performans Reklam ve Web Geliştirme',
+    title: 'Hizmetler | SEO, Video Prodüksiyon, Web Site Yapımı ve 360 Sosyal Medya',
     description:
-      'SEO, GEO optimizasyonu, performans reklamcılığı, sosyal medya yönetimi ve web geliştirme hizmetleriyle görünürlük ve dönüşüm hedeflerinize ulaşın.',
-    keywords: 'teknik seo, geo optimizasyonu, sosyal medya yönetimi, performans reklam, web geliştirme',
+      'SEO ve teknik SEO, video prodüksiyon, web site yapımı, performans reklamcılığı ve 360 sosyal medya yönetimi ile dönüşüm odaklı büyüme sağlayın.',
+    keywords: 'teknik seo, video prodüksiyon, web site yapımı, sosyal medya yönetimi, ppc, google ads',
     canonicalPath: '/hizmetler'
   },
   portfolio: {
@@ -135,14 +137,21 @@ const App: React.FC = () => {
             <Hero onNavigate={setActivePage} onProjectSelect={handleProjectSelect} />
             <References />
             <Services limit={3} onNavigate={() => setActivePage('services')} />
+            <Process />
             <Portfolio limit={4} onNavigate={() => setActivePage('portfolio')} onProjectSelect={handleProjectSelect} />
+            <SeoFaq />
             <CTA onNavigate={() => setActivePage('contact')} />
           </>
         );
       case 'corporate':
         return <About />;
       case 'services':
-        return <Services onNavigate={() => {}} />;
+        return (
+          <>
+            <Services onNavigate={() => {}} />
+            <SeoFaq />
+          </>
+        );
       case 'portfolio':
         return <Portfolio onNavigate={() => {}} onProjectSelect={handleProjectSelect} />;
       case 'contact':
