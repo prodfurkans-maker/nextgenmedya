@@ -35,6 +35,7 @@ const About: React.FC = () => {
             <div className="mt-5 space-y-4 text-zinc-300 leading-relaxed">
               <p>Her projede önce iş hedefini tanımlar, ardından bu hedefe hizmet edecek kanal mimarisini; SEO, içerik, reklam ve dönüşüm optimizasyonu katmanlarıyla kurarız.</p>
               <p>Video prodüksiyon, web deneyimi, Google Ads / Meta Ads yönetimi ve teknik SEO operasyonunu tek çatı altında yürüterek ölçülebilir müşteri kazanımı sağlarız.</p>
+              <p>Kurumsal markalar için süreç yönetimi, raporlama disiplini ve departmanlar arası iletişimi sadeleştiren proje yönetim modeli uygularız.</p>
             </div>
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
               {['Veri Odaklı Karar', 'Haftalık Optimizasyon', 'Uçtan Uca Üretim', 'Şeffaf Raporlama', 'Lokal + Global SEO', 'Dönüşüm Odaklı Kreatif'].map((item) => (
@@ -44,6 +45,23 @@ const About: React.FC = () => {
               ))}
             </div>
           </article>
+        </div>
+      </section>
+
+      <section className="pb-16 sm:pb-20">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+            {[
+              ['360° Growth Partnerliği', 'Pazarlama, kreatif, teknoloji ve içerik ekiplerini tek hedefe hizalayarak dağınık operasyonu ortadan kaldırıyoruz.'],
+              ['Kurumsal Güven ve Süreç', 'Periyodik toplantılar, KPI panoları ve düzenli raporlarla karar alıcı ekipler için net bir görünürlük sunuyoruz.'],
+              ['Satışa Dokunan Strateji', 'Sadece trafik değil; doğru müşteri segmentine ulaşan, lead kalitesini artıran ve geliri büyüten aksiyonlar planlıyoruz.']
+            ].map(([title, desc]) => (
+              <article key={title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-6">
+                <h3 className="text-white text-xl font-extrabold tracking-tight">{title}</h3>
+                <p className="mt-3 text-zinc-300 text-sm leading-relaxed">{desc}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     </div>

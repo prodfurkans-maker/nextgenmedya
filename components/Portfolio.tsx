@@ -16,7 +16,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
       logoId: '1mpzqBGdkaSVV4dCzemn8REuPcQlF2ldm',
       desc: 'Kurumsal web, reklam yönetimi ve drone prodüksiyonla dijital görünürlüğü %85 artırdık.',
       stats: '2.5M+ Gösterim',
-      focus: 'Web + Reklam + Prodüksiyon'
+      focus: 'Web + Reklam + Prodüksiyon',
+      outcomes: ['%85 görünürlük artışı', 'Lead maliyetinde düşüş', 'Marka güveninde artış']
     },
     {
       title: 'On Müzik',
@@ -25,7 +26,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
       logoId: '1QSf3qBwqTFb7yL6x6l5f5KVDRkX0pe5D',
       desc: 'Performans odaklı kampanyalar ile satış hacminde %120 artış elde edildi.',
       stats: '%120 Satış Artışı',
-      focus: 'E-ticaret Performans Marketing'
+      focus: 'E-ticaret Performans Marketing',
+      outcomes: ['%120 satış büyümesi', 'Sepet dönüşüm artışı', 'Yeniden pazarlama başarısı']
     },
     {
       title: 'Mjora Butik',
@@ -34,7 +36,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
       logoId: '1wDaiq6v8qkkR6deMQs2PvH5AOD_gz_eg',
       desc: 'Meta + Google reklam optimizasyonu ile ROAS oranını 4.5 seviyesine taşıdık.',
       stats: '4.5 ROAS',
-      focus: 'ROAS ve Dönüşüm Optimizasyonu'
+      focus: 'ROAS ve Dönüşüm Optimizasyonu',
+      outcomes: ['4.5 ROAS', 'Kreatif test başarısı', 'Hedef kitle kalitesinde artış']
     },
     {
       title: 'Virafit',
@@ -43,7 +46,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
       logoId: '1AXuRtmnSbETxcPl2ADUPyAdle2SHvq3g',
       desc: 'SEO ve performans pazarlama ile üye edinim maliyeti düşerken organik trafik 3 kat büyüdü.',
       stats: '3x Organik Trafik',
-      focus: 'SEO + Lead Generation'
+      focus: 'SEO + Lead Generation',
+      outcomes: ['3x organik trafik', 'Üyelik başvurusunda artış', 'Daha düşük edinim maliyeti']
     }
   ];
 
@@ -58,6 +62,9 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
             <h1 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-[900] text-white tracking-tight">Ölçülebilir Başarı Hikayeleri</h1>
             <p className="mt-4 text-zinc-300 max-w-3xl">
               Farklı sektörlerde kurduğumuz SEO, performans reklam, sosyal medya ve web dönüşüm kurgularının kanal bazlı etkilerini gerçek projeler üzerinden inceleyin.
+            </p>
+            <p className="mt-3 text-zinc-400 max-w-3xl text-sm sm:text-base">
+              Her vaka çalışmasında sadece görüntüleme değil; lead kalitesi, satış dönüşümü ve uzun vadeli marka değeri gibi metrikleri birlikte optimize ediyoruz.
             </p>
           </div>
         )}
@@ -100,10 +107,26 @@ const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelec
                 <span className="inline-flex mt-3 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.22em] font-black text-zinc-200">
                   {project.focus}
                 </span>
+                <ul className="mt-3 space-y-1.5">
+                  {project.outcomes.map((item) => (
+                    <li key={item} className="text-xs text-zinc-300/90">• {item}</li>
+                  ))}
+                </ul>
+                <p className="mt-3 text-xs text-cyan-200 font-semibold">“Strateji + içerik + performans yönetimi birlikte yürütüldüğünde sonuçlar katlanıyor.”</p>
               </div>
             </button>
           ))}
         </div>
+
+        {!limit && (
+          <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-6">
+            <h3 className="text-xl sm:text-2xl font-[900] text-white tracking-tight">Neden Bu Vaka Çalışmaları Önemli?</h3>
+            <p className="mt-3 text-zinc-300 text-sm sm:text-base leading-relaxed">
+              Çünkü her proje; sektöre özel strateji, şeffaf raporlama ve sürekli optimizasyon prensibiyle yönetildi. Siz de markanız için benzer bir büyüme yol haritası
+              istiyorsanız, portföydeki modelin size uyarlanmış versiyonunu birlikte tasarlayabiliriz.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
