@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, CheckCircle2, BarChart3, Sparkles, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, Sparkles, ShieldCheck, PlayCircle } from 'lucide-react';
 
 interface HeroProps {
   onNavigate: (page: string) => void;
@@ -57,12 +57,18 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
 
           <div className="lg:col-span-5">
             <div className="rounded-3xl border border-zinc-200 bg-white/90 backdrop-blur p-4 sm:p-5 shadow-xl">
-              <div className="rounded-2xl bg-gradient-to-br from-[#0F172A] to-[#1F2A4A] p-5 text-white">
-                <p className="text-xs uppercase tracking-[0.28em] text-indigo-100/70 font-black">Growth Dashboard</p>
-                <p className="text-3xl font-[900] mt-3">+128%</p>
-                <p className="text-sm text-indigo-100/80 mt-1">3 ayda organik + ücretli toplam büyüme</p>
-                <div className="mt-4 h-24 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center">
-                  <BarChart3 className="text-indigo-100" size={36} />
+              <div className="relative rounded-2xl overflow-hidden aspect-[16/10] border border-zinc-200">
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/8uLlnrvHiCw?autoplay=1&mute=1&controls=0&loop=1&playlist=8uLlnrvHiCw&modestbranding=1&playsinline=1"
+                  title="NextGen Medya Showreel"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                  <p className="text-white text-xs font-extrabold tracking-wider uppercase">SHOWREEL / DİJİTAL BÜYÜME</p>
+                  <PlayCircle size={20} className="text-white" />
                 </div>
               </div>
 
