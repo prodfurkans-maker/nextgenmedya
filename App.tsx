@@ -161,7 +161,7 @@ const App: React.FC = () => {
           setSelectedProject(null);
         }}
       />
-      <main className={`flex-grow ${activePage === 'project-detail' ? 'pt-0' : 'pt-32 md:pt-40'}`}>
+      <main className={`flex-grow ${activePage === 'project-detail' ? 'pt-0' : 'pt-24 md:pt-28'}`}>
         {renderContent()}
       </main>
       <Footer onNavigate={setActivePage} />
