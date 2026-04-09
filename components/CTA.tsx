@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { ArrowUpRight, Sparkles, ShieldCheck } from 'lucide-react';
 
 interface CTAProps {
   onNavigate: (page: string) => void;
@@ -7,24 +7,44 @@ interface CTAProps {
 
 const CTA: React.FC<CTAProps> = ({ onNavigate }) => {
   return (
-    <section className="py-40 bg-[#121212] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full" style={{ backgroundImage: 'linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff)', backgroundSize: '60px 60px', backgroundPosition: '0 0, 30px 30px' }}></div>
-      </div>
+    <section className="py-20 sm:py-28 relative overflow-hidden bg-gradient-to-b from-[#0F172A] via-[#1E293B] to-[#111827]">
+      <div className="absolute -top-28 -right-24 w-80 h-80 rounded-full bg-zinc-300/20 blur-3xl" />
+      <div className="absolute -bottom-24 -left-20 w-72 h-72 rounded-full bg-indigo-300/20 blur-3xl" />
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="text-[11px] uppercase tracking-[0.6em] font-black text-zinc-500 mb-10 block">HAYALİNİZDEKİ PROJE</span>
-          <h2 className="text-5xl md:text-[100px] font-[900] text-white mb-20 tracking-tighter leading-[0.85]">
-            Sınırları <br /> <span className="text-zinc-600">Birlikte Aşalım.</span>
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
+        <div className="rounded-[2rem] border border-zinc-300/30 bg-white/10 backdrop-blur-xl p-7 sm:p-10 md:p-14 text-center shadow-2xl">
+          <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] font-black text-zinc-200/85 mb-5">
+            <Sparkles size={14} /> Yeni Dönem Büyüme Partneriniz
+          </span>
+
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-[900] text-white tracking-tight leading-[0.95]">
+            Markanızı Sıradanlıktan
+            <span className="block text-zinc-300">Premium Etkiye Taşıyalım.</span>
           </h2>
-          <button 
-            onClick={() => onNavigate('contact')}
-            className="group relative inline-flex items-center justify-center px-20 py-8 font-black bg-white text-black text-[12px] uppercase tracking-[0.3em] overflow-hidden transition-all hover:bg-zinc-100 shadow-2xl"
-          >
-            <span className="relative z-10">Bir Adım Atın</span>
-            <div className="absolute inset-0 bg-zinc-200 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-          </button>
+
+          <p className="mt-5 sm:mt-6 text-zinc-200/85 text-sm sm:text-lg max-w-3xl mx-auto leading-relaxed">
+            Tasarım, performans pazarlama ve içerik üretimini tek bir growth sisteminde birleştiriyor; ölçülebilir ve sürdürülebilir sonuçlar üretiyoruz.
+          </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+            <button
+              onClick={() => onNavigate('contact')}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#E5E7EB] to-[#BFC6D1] text-[#111827] text-[12px] uppercase tracking-[0.22em] font-black shadow-xl"
+            >
+              Strateji Görüşmesi Planla
+              <ArrowUpRight size={16} />
+            </button>
+            <button
+              onClick={() => onNavigate('portfolio')}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-zinc-300/40 text-zinc-100 text-[12px] uppercase tracking-[0.22em] font-black"
+            >
+              Vaka Çalışmalarını İncele
+            </button>
+          </div>
+
+          <div className="mt-7 inline-flex items-center gap-2 text-xs sm:text-sm text-emerald-200 font-semibold">
+            <ShieldCheck size={16} /> Şeffaf raporlama • Haftalık optimizasyon • Uçtan uca ekip desteği
+          </div>
         </div>
       </div>
     </section>

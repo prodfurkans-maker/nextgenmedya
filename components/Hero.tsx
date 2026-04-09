@@ -1,218 +1,91 @@
-
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import React from 'react';
+import { PlayCircle } from 'lucide-react';
 
 interface HeroProps {
   onNavigate: (page: string) => void;
   onProjectSelect: (project: any) => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ onNavigate, onProjectSelect }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  const slides = [
-    {
-      id: 'hillstone',
-      title: "Hillstone Pendik",
-      cat: "İNŞAAT PROJESİ",
-      subtitle: "WEB TASARIM & SOSYAL MEDYA",
-      desc: "Hillstone Pendik'in kurumsal web sitesini (hillstonependik.com) hayata geçirdik. Meta reklam yönetimi ve drone çekimleriyle projenin dijital görünürlüğünü %85 artırdık.",
-      logoId: "1mpzqBGdkaSVV4dCzemn8REuPcQlF2ldm",
-      videoUrl: "https://www.youtube.com/embed/8uLlnrvHiCw?autoplay=1&mute=1&controls=0&loop=1&playlist=8uLlnrvHiCw&si=OdaSKWS5mp-fV26O&enablejsapi=1",
-      img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
-      type: 'video',
-      stats: "2.5M+ GÖSTERİM",
-      url: "https://hillstonependik.com",
-      duration: 45000 
-    },
-    {
-      id: 'onmuzik',
-      title: "On Müzik",
-      cat: "DJ EKİPMANLARI & SES SİSTEMLERİ",
-      subtitle: "META ADS & SATIŞ YÖNETİMİ",
-      desc: "DJ ekipmanları ve profesyonel ses sistemleri satışında Meta reklam yönetimi ile satış hacmini %120 oranında artırdık.",
-      logoId: "1QSf3qBwqTFb7yL6x6l5f5KVDRkX0pe5D",
-      img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=2000",
-      stats: "%120 SATIŞ ARTIŞI",
-      type: 'image',
-      duration: 8000
-    },
-    {
-      id: 'mjora',
-      title: "Mjora Butik",
-      cat: "MODA & E-TİCARET",
-      subtitle: "E-TİCARET & REKLAM YÖNETİMİ",
-      desc: "Mjora Butik için kurguladığımız Meta ve Google reklamları ile ROAS oranını 4.5 seviyesine çıkararak satış hacmini sürdürülebilir şekilde büyüttük.",
-      logoId: "1wDaiq6v8qkkR6deMQs2PvH5AOD_gz_eg",
-      img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=2000",
-      stats: "4.5 ROAS VERİMİ",
-      type: 'image',
-      duration: 8000
-    },
-    {
-      id: 'virafit',
-      title: "Virafit",
-      cat: "SAĞLIK & FITNESS",
-      subtitle: "META ADS & SEO",
-      desc: "Virafit için yürüttüğümüz performans pazarlaması ve SEO çalışmaları ile üye kayıt maliyetlerini %40 düşürürken organik trafiği 3 katına çıkardık.",
-      logoId: "1AXuRtmnSbETxcPl2ADUPyAdle2SHvq3g",
-      img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=2000",
-      stats: "3X ORGANİK TRAFİK",
-      type: 'image',
-      duration: 8000
-    }
-  ];
-
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, slides[currentSlide].duration || 8000);
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, currentSlide, slides]);
-
-  const nextSlide = () => {
-    setIsAutoPlaying(false);
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setIsAutoPlaying(false);
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
+const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   return (
-    <section className="relative h-[95vh] flex items-center overflow-hidden bg-black">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }} // Faster transition
-          className="absolute inset-0 z-0"
-        >
-          {slides[currentSlide].type === 'video' ? (
-            <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none scale-110">
-              <iframe
-                className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2"
-                src={slides[currentSlide].videoUrl}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-              ></iframe>
-              <div className="absolute inset-0 bg-black/60 z-10"></div>
-            </div>
-          ) : (
-            <div className="absolute inset-0 w-full h-full">
-              <img 
-                src={slides[currentSlide].img} 
-                alt={slides[currentSlide].title} 
-                className="w-full h-full object-cover opacity-60"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent z-10"></div>
-            </div>
-          )}
-        </motion.div>
-      </AnimatePresence>
+    <section className="relative min-h-[92vh] md:min-h-screen overflow-hidden bg-[#070B14] pt-28 sm:pt-32 pb-14">
+      <div className="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&q=80&w=1800"
+          alt="Abstract 3D background"
+          className="w-full h-full object-cover opacity-25"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(124,58,237,.3),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,.25),transparent_40%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#070B14]/70 via-[#070B14]/85 to-[#070B14]" />
+      </div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-20">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-4xl"
-          >
-            <div className="flex items-center space-x-6 mb-10">
-              <div className="w-24 h-24 md:w-32 md:h-32 bg-white rounded-3xl p-2 md:p-3 shadow-2xl flex items-center justify-center overflow-hidden">
-                <img 
-                  src={`https://lh3.googleusercontent.com/d/${slides[currentSlide].logoId}`} 
-                  alt={slides[currentSlide].title}
-                  className={`w-full h-full object-contain ${slides[currentSlide].id === 'hillstone' ? 'scale-150' : 'scale-110 md:scale-125'}`}
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[12px] uppercase tracking-[0.6em] font-black text-zinc-400 mb-2">
-                  {slides[currentSlide].subtitle}
-                </span>
-                {slides[currentSlide].stats && (
-                  <span className="text-[10px] bg-white text-black px-3 py-1 font-black tracking-widest rounded-full inline-block w-fit">
-                    {slides[currentSlide].stats}
-                  </span>
-                )}
-              </div>
-            </div>
-            
-            <h1 className="text-6xl md:text-[100px] font-[950] tracking-tighter text-white leading-[0.85] mb-12 uppercase">
-              {slides[currentSlide].title.split(' ')[0]} <br />
-              <span className="text-zinc-500">{slides[currentSlide].title.split(' ').slice(1).join(' ')}</span>
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="text-center lg:text-left flex flex-col justify-center">
+            <h1 className="mt-2 text-5xl sm:text-6xl md:text-7xl font-[900] tracking-tight leading-[0.95] text-white">
+              Geleceği Tasarlıyoruz,
+              <span className="block bg-gradient-to-r from-[#C4B5FD] to-[#7DD3FC] bg-clip-text text-transparent">
+                Markanızı Büyütüyoruz
+              </span>
             </h1>
-            
-            <p className="text-zinc-300 text-lg md:text-xl max-w-2xl mb-12 font-medium leading-relaxed">
-              {slides[currentSlide].desc}
+
+            <p className="mt-5 text-zinc-300 text-sm sm:text-lg max-w-2xl lg:max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              SEO, performans reklamcılığı, web site yapımı, video prodüksiyon ve 360 sosyal medya yönetimini tek growth çatısı altında birleştiriyor;
+              markanız için sürdürülebilir müşteri kazanımı sağlıyoruz.
             </p>
-            
-            <div className="flex flex-wrap items-center gap-8 md:ml-24">
-              <button 
+
+            <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-3">
+              <button
                 onClick={() => onNavigate('contact')}
-                className="group flex items-center space-x-6 text-[12px] uppercase tracking-[0.4em] font-black text-white"
+                className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#DDD6FE] to-[#BAE6FD] text-[#0F172A] text-sm font-black"
               >
-                <span>PROJE BAŞLAT</span>
-                <div className="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-500 transform group-hover:rotate-45">
-                  <span className="text-2xl">→</span>
-                </div>
+                Projeye Başla
+              </button>
+              <button
+                onClick={() => onNavigate('portfolio')}
+                className="px-7 py-3.5 rounded-xl border border-white/20 bg-white/5 text-white text-sm font-black"
+              >
+                Çalışmalarımız
               </button>
             </div>
-          </motion.div>
-        </AnimatePresence>
-      </div>
+          </div>
 
-      {/* Slider Controls */}
-      <div className="absolute bottom-12 left-12 flex items-center space-x-8 z-30">
-        <div className="flex items-center space-x-4">
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => {
-                setIsAutoPlaying(false);
-                setCurrentSlide(idx);
-              }}
-              className={`h-1 transition-all duration-500 rounded-full ${
-                currentSlide === idx ? 'w-16 bg-white' : 'w-8 bg-white/20'
-              }`}
-            />
-          ))}
-        </div>
-        <div className="flex items-center space-x-4">
-          <button 
-            onClick={prevSlide}
-            className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
-          >
-            <ChevronLeft size={24} />
-          </button>
-          <button 
-            onClick={nextSlide}
-            className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
-          >
-            <ChevronRight size={24} />
-          </button>
-        </div>
-      </div>
+          <div className="relative">
+            <div className="absolute -inset-6 bg-gradient-to-r from-violet-400/25 to-cyan-300/20 blur-3xl" />
+            <div className="relative rounded-[28px] border border-white/20 bg-gradient-to-br from-white/10 to-white/[0.03] backdrop-blur-xl p-3 sm:p-4 shadow-[0_30px_90px_rgba(0,0,0,.45)]">
+              <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/15 bg-black">
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/8uLlnrvHiCw?autoplay=1&mute=1&controls=0&loop=1&playlist=8uLlnrvHiCw&modestbranding=1&playsinline=1"
+                  title="NextGen Medya Hero Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
 
-      {/* Decorative Slide Number */}
-      <div className="absolute bottom-12 right-12 hidden lg:flex flex-col items-end z-30">
-         <span className="text-8xl font-[950] text-white/5 tracking-tighter leading-none">
-           0{currentSlide + 1}
-         </span>
-         <span className="text-[11px] uppercase tracking-[0.5em] font-black text-zinc-500 mt-4">
-           {slides[currentSlide].title}
-         </span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-black/0 pointer-events-none" />
+
+                <span className="absolute top-4 left-4 rounded-full border border-white/35 bg-black/35 px-3 py-1 text-[10px] font-black tracking-[0.25em] uppercase text-zinc-100 backdrop-blur pointer-events-none">
+                  NextGen Showreel
+                </span>
+
+                <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-white/20 bg-black/35 backdrop-blur-md px-3 py-2.5 flex items-center justify-between pointer-events-none">
+                  <div>
+                    <p className="text-white text-[11px] sm:text-xs font-black tracking-[0.2em] uppercase">Video Prodüksiyon</p>
+                    <p className="text-zinc-200 text-xs sm:text-sm font-semibold">Marka hikayenizi premium görsel dille anlatıyoruz</p>
+                  </div>
+                  <div className="w-11 h-11 rounded-xl bg-white/15 border border-white/30 flex items-center justify-center text-white">
+                    <PlayCircle size={20} />
+                  </div>
+                </div>
+
+                <div className="absolute left-3 right-3 bottom-16 h-1.5 rounded-full bg-white/20 overflow-hidden pointer-events-none">
+                  <div className="h-full w-1/3 bg-gradient-to-r from-[#C4B5FD] to-[#7DD3FC]" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

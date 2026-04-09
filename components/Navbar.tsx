@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 
 interface NavbarProps {
   activePage: string;
@@ -14,20 +13,13 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
   const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 16);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent scroll when menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isMenuOpen ? 'hidden' : 'unset';
   }, [isMenuOpen]);
 
   const navLinks = [
@@ -35,10 +27,10 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
     { id: 'corporate', name: 'Kurumsal' },
     { id: 'services', name: 'Hizmetler' },
     { id: 'portfolio', name: 'Portfolyo' },
-    { id: 'contact', name: 'İletişim' },
+    { id: 'contact', name: 'İletişim' }
   ];
 
-  const logoUrl = "https://lh3.googleusercontent.com/d/18wpfqJGwsE1h_t3vUpcNfeSjxQVtC4ls";
+  const logoUrl = 'https://lh3.googleusercontent.com/d/18wpfqJGwsE1h_t3vUpcNfeSjxQVtC4ls';
 
   const handleNavigate = (id: string) => {
     onNavigate(id);
@@ -47,135 +39,117 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
 
   return (
     <>
-      <nav 
-        className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
-          isScrolled || isMenuOpen ? 'glass-nav border-b border-gray-100 py-3' : 'bg-transparent py-8'
+      <nav
+        className={`fixed top-3 sm:top-4 left-3 right-3 sm:left-6 sm:right-6 z-[60] transition-all duration-500 ${
+          isScrolled || isMenuOpen
+            ? 'bg-gradient-to-r from-[#0B1220] via-[#111A2B] to-[#0C1425] border border-cyan-200/20 shadow-[0_20px_50px_rgba(3,8,20,0.55)] rounded-2xl py-2.5'
+            : 'bg-gradient-to-r from-[#0B1220] via-[#111A2B] to-[#0C1425] border border-cyan-200/15 shadow-[0_14px_35px_rgba(3,8,20,0.45)] rounded-2xl py-3.5'
         }`}
       >
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
-          <div className="flex items-center">
-            <button 
-              onClick={() => handleNavigate('home')}
-              className="flex items-center group space-x-4"
-            >
+        <div className="max-w-[1400px] mx-auto px-3 sm:px-5 md:px-7 flex items-center justify-between gap-3">
+          <button onClick={() => handleNavigate('home')} className="flex items-center space-x-3 text-left group min-w-0">
+            <div className="relative">
               {!logoError ? (
-                <img 
-                  src={logoUrl} 
-                  alt="NextGen Medya Logo" 
+                <img
+                  src={logoUrl}
+                  alt="NextGen Medya Logo"
                   loading="lazy"
-                  className={`transition-all duration-500 object-contain hover:rotate-3 rounded-full mix-blend-multiply ${
-                    isScrolled ? 'h-16 md:h-20' : 'h-24 md:h-32'
+                  className={`relative object-contain rounded-2xl transition-all duration-500 ${
+                    isScrolled ? 'h-10 w-10 sm:h-11 sm:w-11' : 'h-11 w-11 sm:h-12 sm:w-12'
                   }`}
                   onError={() => setLogoError(true)}
                 />
-              ) : null}
-              <div className="flex flex-col items-start leading-none">
-                <span className={`font-[900] tracking-tighter text-black transition-all duration-500 ${
-                  isScrolled ? 'text-xl md:text-2xl' : 'text-3xl md:text-4xl'
-                }`}>
-                  NextGen <span className="text-zinc-400">Medya</span>
-                </span>
-                <span className="text-[10px] font-black tracking-[0.4em] text-zinc-300 mt-1 uppercase">Digital Agency</span>
-              </div>
-            </button>
-          </div>
+              ) : (
+                <div className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-2xl border border-white/20" />
+              )}
+            </div>
+            <div className="min-w-0">
+              <p className="font-[900] tracking-tight text-sm sm:text-base md:text-lg truncate [font-family:'Sora',Inter,sans-serif]">
+                <span className="bg-gradient-to-r from-[#F8FAFC] via-[#CBD5E1] to-[#94A3B8] bg-clip-text text-transparent">NextGen</span>{' '}
+                <span className="bg-gradient-to-r from-[#E2E8F0] to-[#A1A1AA] bg-clip-text text-transparent">Medya</span>
+              </p>
+              <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.28em] text-zinc-300/70 font-bold truncate">
+                Premium Growth Studio
+              </p>
+            </div>
+          </button>
 
-          <div className="hidden xl:flex items-center space-x-14">
+          <div className="hidden xl:flex items-center gap-2">
             {navLinks.map((link) => (
-              <button 
+              <button
                 key={link.id}
                 onClick={() => handleNavigate(link.id)}
-                className={`text-[13px] uppercase tracking-[0.25em] font-black transition-all relative py-2 ${
-                  activePage === link.id ? 'text-black' : 'text-zinc-400 hover:text-black'
+                className={`relative px-4 py-2.5 rounded-xl text-[12px] uppercase tracking-[0.2em] font-black transition-all ${
+                  activePage === link.id ? 'text-[#0E1625] bg-white shadow-lg' : 'text-zinc-200/80 hover:text-white hover:bg-white/10'
                 }`}
               >
                 {link.name}
-                {activePage === link.id && (
-                  <motion.span 
-                    layoutId="nav-underline"
-                    className="absolute bottom-0 left-0 w-full h-[4px] bg-black rounded-full"
-                  />
-                )}
               </button>
             ))}
           </div>
 
-          <div className="flex items-center">
-            <button 
+          <div className="flex items-center gap-2">
+            <button
               onClick={() => handleNavigate('contact')}
-              className="hidden sm:block bg-black text-white text-[12px] uppercase tracking-[0.3em] font-[900] px-10 py-4 hover:bg-zinc-800 transition-all shadow-2xl active:scale-95"
+              className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-[#E6ECF3] to-[#C3CEDD] text-[#111827] text-[11px] uppercase tracking-[0.2em] font-black px-4 md:px-6 py-3 rounded-xl transition-all"
             >
-              Teklif Alın
+              Teklif Al
+              <ArrowUpRight size={14} />
             </button>
-            <button 
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="xl:hidden text-black ml-6 p-3 bg-zinc-100 rounded-full hover:bg-zinc-200 transition-colors z-[70]"
+              className="xl:hidden inline-flex items-center justify-center rounded-xl p-2.5 bg-white/12 text-white hover:bg-white/22 transition-colors"
+              aria-label="Menü"
             >
-              {isMenuOpen ? <X size={28} strokeWidth={2.5} /> : <Menu size={28} strokeWidth={2.5} />}
+              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[55] bg-white flex flex-col"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[55] bg-black/50 backdrop-blur-sm"
           >
-            <div className="flex-grow flex flex-col justify-center px-10 pt-20">
-              <div className="space-y-8">
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 24, stiffness: 230 }}
+              className="ml-auto h-full w-[88%] max-w-sm bg-gradient-to-b from-[#0B1220] to-[#0C1425] p-6 flex flex-col border-l border-cyan-200/20"
+            >
+              <div className="flex items-center justify-between mb-8">
+                <p className="font-black uppercase tracking-[0.24em] text-xs text-zinc-200/60">Menü</p>
+                <Sparkles size={16} className="text-zinc-200/60" />
+              </div>
+
+              <div className="space-y-3">
                 {navLinks.map((link, idx) => (
                   <motion.button
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 + idx * 0.1 }}
                     key={link.id}
+                    initial={{ opacity: 0, x: 25 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.05 + idx * 0.06 }}
                     onClick={() => handleNavigate(link.id)}
-                    className="flex items-center justify-between w-full group"
+                    className={`w-full text-left px-4 py-4 rounded-2xl font-extrabold tracking-tight text-2xl transition-all ${
+                      activePage === link.id ? 'bg-white text-[#0E1625]' : 'bg-white/5 text-white'
+                    }`}
                   >
-                    <span className={`text-5xl md:text-7xl font-[900] tracking-tighter uppercase transition-colors ${
-                      activePage === link.id ? 'text-black' : 'text-zinc-200 group-hover:text-black'
-                    }`}>
-                      {link.name}
-                    </span>
-                    <ArrowRight 
-                      className={`transition-all duration-500 ${
-                        activePage === link.id ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10 group-hover:opacity-100 group-hover:translate-x-0'
-                      }`} 
-                      size={40} 
-                    />
+                    {link.name}
                   </motion.button>
                 ))}
               </div>
-            </div>
 
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="p-10 border-t border-zinc-100 bg-zinc-50 flex flex-col md:flex-row md:items-center justify-between gap-8"
-            >
-              <div className="flex flex-col">
-                <span className="text-[10px] font-black tracking-[0.4em] text-zinc-400 uppercase mb-2">Bize Ulaşın</span>
-                <a href="mailto:info@nextgenmedya.com" className="text-xl font-black text-black hover:text-zinc-600 transition-colors">
+              <div className="mt-auto pt-8 border-t border-cyan-200/20 space-y-3">
+                <a href="mailto:info@nextgenmedya.com" className="block text-white font-bold text-sm">
                   info@nextgenmedya.com
                 </a>
-              </div>
-              
-              <div className="flex items-center space-x-6">
-                <a href="#" className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-zinc-200 hover:bg-black hover:text-white transition-all shadow-sm">
-                  <Instagram size={20} />
-                </a>
-                <a href="#" className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-zinc-200 hover:bg-black hover:text-white transition-all shadow-sm">
-                  <Facebook size={20} />
-                </a>
-                <a href="#" className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-zinc-200 hover:bg-black hover:text-white transition-all shadow-sm">
-                  <Twitter size={20} />
+                <a href="tel:05364290919" className="block text-zinc-300/80 font-semibold text-sm">
+                  0536 429 09 19
                 </a>
               </div>
             </motion.div>

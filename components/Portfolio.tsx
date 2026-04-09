@@ -1,5 +1,5 @@
-
-import React, { useState } from 'react';
+import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface PortfolioProps {
   limit?: number;
@@ -7,141 +7,129 @@ interface PortfolioProps {
   onProjectSelect: (project: any) => void;
 }
 
-const ProjectCard = React.memo<{ project: any, logoUrl: string, onSelect: (p: any) => void }>(({ project, logoUrl, onSelect }) => {
-  const [imageError, setImageError] = useState(false);
-
-  return (
-    <div className="group flex flex-col" onClick={() => onSelect(project)}>
-      <div className="relative overflow-hidden bg-zinc-200 aspect-[4/3] mb-10 shadow-xl shadow-zinc-200/40 rounded-2xl cursor-pointer">
-        {/* Project Image - Blurred initially, clear on hover */}
-        <img 
-          src={project.img} 
-          alt={project.title} 
-          loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-60 blur-lg scale-110 group-hover:opacity-100 group-hover:blur-0 group-hover:scale-100" 
-        />
-        
-        {/* Logo Container - Visible initially, fades out on hover */}
-        <div className="absolute inset-0 flex items-center justify-center transition-all duration-700 group-hover:opacity-0 group-hover:scale-110 z-10">
-          <div className={`bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl flex items-center justify-center border border-white/20 transition-all duration-700 ${
-            project.zoomLogo ? 'w-56 h-56 md:w-72 md:h-72 p-4' : 'w-48 h-48 md:w-64 md:h-64 p-10'
-          }`}>
-            {!imageError ? (
-              <img 
-                src={logoUrl} 
-                alt={`${project.title} Logo`} 
-                loading="lazy"
-                className={`max-w-full max-h-full object-contain drop-shadow-xl ${project.zoomLogo ? 'scale-125' : ''}`} 
-                onError={() => setImageError(true)}
-              />
-            ) : (
-              <span className="text-black text-xl font-black tracking-tighter uppercase">
-                {project.title}
-              </span>
-            )}
-          </div>
-        </div>
-
-        <div className="absolute top-6 left-6 bg-black text-white px-4 py-2 text-[10px] font-black tracking-widest rounded-full shadow-lg z-20 opacity-100 transition-opacity">
-          {project.cat}
-        </div>
-      </div>
-      
-      <div className="flex flex-col space-y-4 px-2">
-        <div className="flex items-start justify-between">
-          <div className="max-w-[70%]">
-            <h3 className="text-3xl font-[950] text-black tracking-tighter uppercase group-hover:text-zinc-600 transition-colors leading-none">
-              {project.title}
-            </h3>
-            <p className="text-zinc-500 text-sm font-semibold leading-relaxed mt-3">
-              {project.desc}
-            </p>
-          </div>
-          <div className="w-16 h-16 bg-zinc-50 rounded-2xl flex items-center justify-center p-2 border border-zinc-100 shadow-sm">
-            <img 
-              src={logoUrl} 
-              alt={`${project.title} Logo`} 
-              loading="lazy"
-              className="w-full h-full object-contain transition-all duration-500"
-              onError={(e) => (e.currentTarget.style.display = 'none')}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-});
-
-ProjectCard.displayName = 'ProjectCard';
-
 const Portfolio: React.FC<PortfolioProps> = ({ limit, onNavigate, onProjectSelect }) => {
   const projects = [
-    { 
-      title: "Hillstone Pendik", 
-      cat: "İNŞAAT PROJESİ", 
-      img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000",
-      logoId: "1mpzqBGdkaSVV4dCzemn8REuPcQlF2ldm",
-      desc: "Kurumsal web tasarımı (hillstonependik.com), Meta reklam yönetimi ve drone çekimleriyle projenin dijital görünürlüğünü %85 artırdık.",
-      stats: "2.5M+ GÖSTERİM",
-      url: "https://hillstonependik.com",
-      videoUrl: "https://www.youtube.com/embed/8uLlnrvHiCw?autoplay=1&mute=1&controls=0&loop=1&playlist=8uLlnrvHiCw&si=OdaSKWS5mp-fV26O&enablejsapi=1",
-      zoomLogo: true
+    {
+      title: 'Hillstone Pendik',
+      cat: 'İNŞAAT PROJESİ',
+      img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
+      logoId: '1mpzqBGdkaSVV4dCzemn8REuPcQlF2ldm',
+      desc: 'Kurumsal web, reklam yönetimi ve drone prodüksiyonla dijital görünürlüğü %85 artırdık.',
+      stats: '2.5M+ Gösterim',
+      focus: 'Web + Reklam + Prodüksiyon',
+      outcomes: ['%85 görünürlük artışı', 'Lead maliyetinde düşüş', 'Marka güveninde artış']
     },
-    { 
-      title: "On Müzik", 
-      cat: "DJ EKİPMANLARI & SES SİSTEMLERİ", 
-      img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=1000",
-      logoId: "1QSf3qBwqTFb7yL6x6l5f5KVDRkX0pe5D",
-      desc: "DJ ekipmanları ve profesyonel ses sistemleri satışında Meta reklam yönetimi ile satış hacmini %120 oranında artırdık.",
-      stats: "%120 SATIŞ ARTIŞI"
+    {
+      title: 'On Müzik',
+      cat: 'DJ EKİPMANLARI & SES',
+      img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=1200',
+      logoId: '1QSf3qBwqTFb7yL6x6l5f5KVDRkX0pe5D',
+      desc: 'Performans odaklı kampanyalar ile satış hacminde %120 artış elde edildi.',
+      stats: '%120 Satış Artışı',
+      focus: 'E-ticaret Performans Marketing',
+      outcomes: ['%120 satış büyümesi', 'Sepet dönüşüm artışı', 'Yeniden pazarlama başarısı']
     },
-    { 
-      title: "Mjora Butik", 
-      cat: "MODA & E-TİCARET", 
-      img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1000",
-      logoId: "1wDaiq6v8qkkR6deMQs2PvH5AOD_gz_eg",
-      desc: "Meta ve Google reklam yönetimi ile ROAS oranını 4.5 seviyesine çıkararak satış hacmini sürdürülebilir şekilde büyüttük.",
-      stats: "4.5 ROAS VERİMİ"
+    {
+      title: 'Mjora Butik',
+      cat: 'MODA & E-TİCARET',
+      img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200',
+      logoId: '1wDaiq6v8qkkR6deMQs2PvH5AOD_gz_eg',
+      desc: 'Meta + Google reklam optimizasyonu ile ROAS oranını 4.5 seviyesine taşıdık.',
+      stats: '4.5 ROAS',
+      focus: 'ROAS ve Dönüşüm Optimizasyonu',
+      outcomes: ['4.5 ROAS', 'Kreatif test başarısı', 'Hedef kitle kalitesinde artış']
     },
-    { 
-      title: "Virafit", 
-      cat: "SAĞLIK & FITNESS", 
-      img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1000",
-      logoId: "1AXuRtmnSbETxcPl2ADUPyAdle2SHvq3g",
-      desc: "Performans pazarlaması ve SEO çalışmaları ile üye kayıt maliyetlerini %40 düşürürken organik trafiği 3 katına çıkardık.",
-      stats: "3X ORGANİK TRAFİK"
+    {
+      title: 'Virafit',
+      cat: 'SAĞLIK & FITNESS',
+      img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200',
+      logoId: '1AXuRtmnSbETxcPl2ADUPyAdle2SHvq3g',
+      desc: 'SEO ve performans pazarlama ile üye edinim maliyeti düşerken organik trafik 3 kat büyüdü.',
+      stats: '3x Organik Trafik',
+      focus: 'SEO + Lead Generation',
+      outcomes: ['3x organik trafik', 'Üyelik başvurusunda artış', 'Daha düşük edinim maliyeti']
     }
   ];
 
   const displayProjects = limit ? projects.slice(0, limit) : projects;
 
   return (
-    <section className="py-32 bg-white">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
-          <div className="max-w-2xl">
-            <span className="text-[10px] uppercase tracking-[0.5em] font-black text-zinc-400 mb-4 block underline underline-offset-8 decoration-zinc-200">VİTRİNİMİZ</span>
-            <h2 className="text-5xl md:text-8xl font-[900] tracking-tighter text-black">İşlerimiz.</h2>
+    <section className="py-16 sm:py-20 bg-[#060A12]">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
+        {!limit && (
+          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:p-8 mb-8 sm:mb-10">
+            <span className="text-[10px] uppercase tracking-[0.35em] font-black text-zinc-400">PORTFÖY</span>
+            <h1 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-[900] text-white tracking-tight">Ölçülebilir Başarı Hikayeleri</h1>
+            <p className="mt-4 text-zinc-300 max-w-3xl">
+              Farklı sektörlerde kurduğumuz SEO, performans reklam, sosyal medya ve web dönüşüm kurgularının kanal bazlı etkilerini gerçek projeler üzerinden inceleyin.
+            </p>
+            <p className="mt-3 text-zinc-400 max-w-3xl text-sm sm:text-base">
+              Her vaka çalışmasında sadece görüntüleme değil; lead kalitesi, satış dönüşümü ve uzun vadeli marka değeri gibi metrikleri birlikte optimize ediyoruz.
+            </p>
+          </div>
+        )}
+
+        <div className="flex flex-col md:flex-row justify-between md:items-end mb-8 sm:mb-12 gap-4">
+          <div className="max-w-3xl">
+            <h2 className="text-4xl md:text-6xl font-[900] tracking-tight text-white">Seçkin <span className="text-[#7DD3FC]">Projeler</span></h2>
+            <p className="mt-3 text-zinc-400 text-sm sm:text-base">Referans markalarımızla birlikte hayata geçirdiğimiz performans odaklı büyüme hikayeleri.</p>
           </div>
           {limit && onNavigate && (
-            <button 
-              onClick={() => onNavigate('portfolio')} 
-              className="text-[11px] uppercase tracking-[0.2em] font-black bg-white border border-zinc-200 px-8 py-4 hover:bg-black hover:text-white transition-all duration-500 shadow-sm"
+            <button
+              onClick={() => onNavigate('portfolio')}
+              className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] font-black text-white border border-white/15 rounded-xl px-4 py-3"
             >
               Tüm Projeler
+              <ArrowUpRight size={14} />
             </button>
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-          {displayProjects.map((p, idx) => (
-            <ProjectCard key={idx} project={p} logoUrl={`https://lh3.googleusercontent.com/d/${p.logoId}`} onSelect={onProjectSelect} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          {displayProjects.map((project, idx) => (
+            <button
+              key={idx}
+              onClick={() => onProjectSelect(project)}
+              className="group text-left rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden hover:border-white/20 transition-all"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <img src={project.img} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <span className="absolute top-4 left-4 text-[10px] font-black tracking-wider uppercase bg-white/90 text-zinc-900 rounded-full px-3 py-1.5">{project.cat}</span>
+                <span className="absolute bottom-4 left-4 text-white text-xs font-extrabold tracking-wide">{project.stats}</span>
+                <div className="absolute bottom-4 right-4 w-16 h-16 rounded-2xl bg-white/95 border border-white shadow-xl p-2.5">
+                  <img src={`https://lh3.googleusercontent.com/d/${project.logoId}`} alt={project.title} className="w-full h-full object-contain" />
+                </div>
+              </div>
+              <div className="p-5">
+                <h3 className="text-2xl font-[900] tracking-tight text-white">{project.title}</h3>
+                <p className="mt-2 text-zinc-400 text-sm leading-relaxed">{project.desc} Projelerde sürdürülebilir müşteri kazanımı için sürekli optimizasyon modeli kullandık.</p>
+                <span className="inline-flex mt-3 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.22em] font-black text-zinc-200">
+                  {project.focus}
+                </span>
+                <ul className="mt-3 space-y-1.5">
+                  {project.outcomes.map((item) => (
+                    <li key={item} className="text-xs text-zinc-300/90">• {item}</li>
+                  ))}
+                </ul>
+                <p className="mt-3 text-xs text-cyan-200 font-semibold">“Strateji + içerik + performans yönetimi birlikte yürütüldüğünde sonuçlar katlanıyor.”</p>
+              </div>
+            </button>
           ))}
         </div>
+
+        {!limit && (
+          <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-6">
+            <h3 className="text-xl sm:text-2xl font-[900] text-white tracking-tight">Neden Bu Vaka Çalışmaları Önemli?</h3>
+            <p className="mt-3 text-zinc-300 text-sm sm:text-base leading-relaxed">
+              Çünkü her proje; sektöre özel strateji, şeffaf raporlama ve sürekli optimizasyon prensibiyle yönetildi. Siz de markanız için benzer bir büyüme yol haritası
+              istiyorsanız, portföydeki modelin size uyarlanmış versiyonunu birlikte tasarlayabiliriz.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
 };
-
 
 export default Portfolio;

@@ -4,7 +4,7 @@ import { MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const WhatsAppButton: React.FC = () => {
-  const phoneNumber = "905434123380"; // Format for WhatsApp link
+  const phoneNumber = "905364290919"; // Format for WhatsApp link
   const message = "Merhaba, hizmetleriniz hakkında bilgi almak istiyorum.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -17,7 +17,7 @@ const WhatsAppButton: React.FC = () => {
       animate={{ scale: 1, opacity: 1 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center group"
+      className="fixed bottom-24 md:bottom-8 right-4 md:right-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center group"
       title="WhatsApp ile İletişime Geçin"
     >
       <MessageCircle size={32} fill="white" />
